@@ -1,4 +1,4 @@
-### guildOnly
+### ownerOnly
 ---
 
 ```js
