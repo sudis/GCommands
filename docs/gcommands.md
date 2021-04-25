@@ -1,3 +1,6 @@
+### Getting started with GCommands
+---
+
 ## Need have discord.js v12
 ```
 npm i gcommands
