@@ -1,2 +1,2 @@
-* [Home](home.md)
+* [Home](/)
 * [GCommands](gcommands.md)
