@@ -1,3 +1,3 @@
 * [Home](/)
 * [GCommands](gcommands.md)
-  - [t](t.md) 
+  * [t](t.md) 
