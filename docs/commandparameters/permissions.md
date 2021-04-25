@@ -1,3 +1,6 @@
+### permissions
+---
+
 ## User permissions
 ```js
 module.exports = {
