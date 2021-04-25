@@ -1,3 +1,6 @@
+### expectedArgs
+---
+
 ```js
 module.exports = {
 	name: "NAME",
