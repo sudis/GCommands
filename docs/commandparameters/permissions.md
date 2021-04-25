@@ -1,4 +1,4 @@
-### permissions
+### Permissions
 ---
 
 ## User permissions
