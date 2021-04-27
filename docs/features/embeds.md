@@ -4,7 +4,8 @@
 ```js
 var embed = new Discord.MessageEmbed().setTitle("test")
 
-client.api.interactions(slash.id, slash.token).callback.post({
+return embed
+/*client.api.interactions(slash.id, slash.token).callback.post({
     data: {
         type: 4,
         data: await createAPIMessage(slash, embed)
@@ -17,7 +18,7 @@ async function createAPIMessage(interaction, content) {
     .resolveFiles();
     
     return { ...apiMessage.data, files: apiMessage.files };
-}
+} # OLD | CAN USE */
 ```
 
 ### How make embed? (buttons)
@@ -55,7 +56,8 @@ module.exports = {
       return message.channel.send(embed)
 		}
 		
-		client.api.interactions(slash.id, slash.token).callback.post({
+		return embed
+		/*client.api.interactions(slash.id, slash.token).callback.post({
 			data: {
 				type: 4,
 				data: await createAPIMessage(slash, embed)
@@ -68,7 +70,7 @@ module.exports = {
 		    .resolveFiles();
 		    
 		    return { ...apiMessage.data, files: apiMessage.files };
-		}
+		} # OLD | CAN USE */
   }
 };
 ```
