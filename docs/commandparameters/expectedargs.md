@@ -1,5 +1,4 @@
-### expectedArgs
----
+# expectedArgs
 
 ```js
 module.exports = {
