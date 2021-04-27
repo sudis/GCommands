@@ -11,7 +11,9 @@ module.exports = {
 				allowedMentions: { parse: ["users"], repliedUser: true }
 			})
 		}
-		client.api.interactions(slash.id, slash.token).callback.post({
+		
+		return "hi"
+		/*client.api.interactions(slash.id, slash.token).callback.post({
 			data: {
 				type: 4,
 				data: {
@@ -19,7 +21,7 @@ module.exports = {
 					allowedMentions: { parse: ["users"], repliedUser: true }
 				}
 			}
-		})
+		}) # OLD | CAN USE */
   }
 };
 ```
