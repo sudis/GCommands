@@ -1,7 +1,7 @@
-### allowedMentions
+## allowedMentions
 ---
 
-## How disable mentions?
+### How disable mentions?
 ```js
 // in inlineReply
 message.inlineReply("hi", {
