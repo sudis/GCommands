@@ -5,6 +5,21 @@
 ```js
 message.inlineReply("go hi")
 
+message.buttonsWithReply("Buttons POG", {
+    buttons: [
+        {
+            style: 'url',
+            label: 'Github!',
+            url: 'https://github.com/Garlic-Team'
+        },
+        {
+            style: 'blupurple',
+            label: 'Heh',
+            id: 'heh_button'
+        }
+    ]
+})
+
 // Example: 
 module.exports = {
 	name: "NAME",
