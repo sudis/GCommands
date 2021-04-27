@@ -43,5 +43,6 @@ In the `cmdDir` parameter, enter the name of folder to which you will add comman
 
 > 
 > Global commands are cached for 1 hour. That means that new global commands will fan out slowly across all guilds, and will be guaranteed to be updated in an hour.
+> 
 > Guild commands update instantly. We recommend you use guild commands for quick testing, and global commands when they're ready for public use.
 > 
