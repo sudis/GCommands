@@ -1,5 +1,4 @@
-### guildOnly
----
+# guildOnly
 
 ```js
 module.exports = {
