@@ -28,14 +28,15 @@ module.exports = {
 			return message.inlineReply("hi")
 		}
 	
-		client.api.interactions(slash.id, slash.token).callback.post({
+		return "hi"
+		/*client.api.interactions(slash.id, slash.token).callback.post({
 			data: {
 				type: 4,
 				data: {
 					content: "hi",
 				}
 			}
-		})
+		}) # OLD | CAN USE */
   }
 };
 ```
