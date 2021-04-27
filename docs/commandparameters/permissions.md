@@ -1,7 +1,6 @@
-### Permissions
----
+# Permissions
 
-## User permissions
+### User permissions
 ```js
 module.exports = {
 	name: "NAME",
@@ -20,7 +19,7 @@ module.exports = {
 };
 ```
 
-## Own requiredPermissionMessage
+### Own requiredPermissionMessage
 ```js
 module.exports = {
 	name: "NAME",
