@@ -1,7 +1,7 @@
-### Embeds
+# Embeds
 ---
 
-## How make embed? (slash command)
+### How make embed? (slash command)
 ```js
 var embed = new Discord.MessageEmbed().setTitle("test")
 
@@ -21,7 +21,7 @@ async function createAPIMessage(interaction, content) {
 }
 ```
 
-## How make embed? (buttons)
+### How make embed? (buttons)
 ```js
 var embed = Discord.MessageEmbed().setTitle("g")
 
@@ -42,7 +42,7 @@ message.buttons("Buttons POG", {
 })
 ```
 
-## Full example:
+### Full example:
 ```js
 const Discord = require("discord.js")
 
