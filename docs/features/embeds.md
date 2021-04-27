@@ -1,5 +1,4 @@
 # Embeds
----
 
 ### How make embed? (slash command)
 ```js
