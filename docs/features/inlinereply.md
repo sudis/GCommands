@@ -1,7 +1,6 @@
-### inlineReply
----
+# inlineReply
 
-## How use inlineReply without discord.js v13?
+### How use inlineReply without discord.js v13?
 ```js
 message.inlineReply("go hi")
 
