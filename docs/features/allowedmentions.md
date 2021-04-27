@@ -1,4 +1,4 @@
-## allowedMentions
+# allowedMentions
 ---
 
 ### How disable mentions?
