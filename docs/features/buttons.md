@@ -36,6 +36,23 @@ message.buttons("Buttons POG", {
     ]
 })
 
+// embeds
+message.buttons("Buttons POG", {
+    buttons: [
+        {
+            style: 'url',
+            label: 'Github!',
+            url: 'https://github.com/Garlic-Team'
+        },
+        {
+            style: 'blupurple',
+            label: 'Heh',
+            id: 'heh_button'
+        }
+    ],
+    embed: new Discord.MessageEmbed().setTitle("go")
+})
+
 // For slash command
 
 const { Buttons } = require("gcommands"); // NEED IMPORT IN COMMAND
