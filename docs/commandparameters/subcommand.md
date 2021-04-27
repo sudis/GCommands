@@ -33,5 +33,5 @@ module.exports = {
 };
 ```
 
-If you want to use `subCommand`, you currently need to specify arguments for each.
-The `minArgs` argument still works.
+If you want to use `subCommand`, you currently need to specify arguments for each.<br>
+The `minArgs` argument still works.<br>
