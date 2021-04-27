@@ -11,3 +11,4 @@
   * [Embeds](features/embeds.md) 
   * [allowedMentions](features/allowedmentions.md) 
   * [inlineReply](features/inlinereply.md) 
+  * [Events](features/events.md) 
