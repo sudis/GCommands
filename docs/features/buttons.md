@@ -1,4 +1,4 @@
-### Buttons
+# Buttons
 ---
 
 <div align="center">
@@ -84,7 +84,7 @@ client.api.interactions(slash.id, slash.token).callback.post({
 })
 ```
 
-## How to detect when you click on the button?
+### How to detect when you click on the button?
 ```js
 client.on("clickButton", (button) => {
   if(button.id == "heh_button") {
