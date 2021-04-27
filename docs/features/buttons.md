@@ -110,6 +110,6 @@ client.on("clickButton", (button) => {
 })
 ```
 
-⚠️ If you are using buttons, remove errorMessage in the constructor.
-⚠️ If the button style is "url", you must provide url 
-⚠️ If the button style is not "url", you must provide custom id
+⚠️ If you are using buttons, remove errorMessage in the constructor.<br>
+⚠️ If the button style is "url", you must provide url.
+⚠️ If the button style is not "url", you must provide custom id.<br>
