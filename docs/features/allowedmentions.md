@@ -1,5 +1,4 @@
 # allowedMentions
----
 
 ### How disable mentions?
 ```js
