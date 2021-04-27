@@ -7,14 +7,15 @@ module.exports = {
 	description: "DESCRIPTION",
 	requiredPermission: "ADMINISTRATOR",
 	run: async(client, slash) => {
-		client.api.interactions(slash.id, slash.token).callback.post({
+		return "My ping is `" + Math.round(client.ws.ping) + "ms`"
+		/*client.api.interactions(slash.id, slash.token).callback.post({
 			data: {
 				type: 4,
 				data: {
 					content: "My ping is `" + Math.round(client.ws.ping) + "ms`"
 				}
 			}
-		})
+		}) # OLD | CAN USE */
   }
 };
 ```
@@ -27,14 +28,15 @@ module.exports = {
 	requiredPermission: "ADMINISTRATOR",
 	requiredPermissionMessage: "You need have ADMINISTRATOR perms.",
 	run: async(client, slash) => {
-		client.api.interactions(slash.id, slash.token).callback.post({
+		return "My ping is `" + Math.round(client.ws.ping) + "ms`"
+		/*client.api.interactions(slash.id, slash.token).callback.post({
 			data: {
 				type: 4,
 				data: {
 					content: "My ping is `" + Math.round(client.ws.ping) + "ms`"
 				}
 			}
-		})
+		}) # OLD | CAN USE */
   }
 };
 ```
