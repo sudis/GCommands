@@ -4,6 +4,10 @@
   <img src="https://gblobscdn.gitbook.com/assets%2F-MZ-Ze0MbWnYL4h30NVT%2F-MZ3DI9HSf3A5iSn6G__%2F-MZ3DlNBFtnS1422-5Tf%2Fbuttons.png?alt=media&token=92a879fc-e9e8-4e34-9e81-03f570f3bc5e">
 </div>
 
+>
+> Discord has currently disabled buttons. That's why they don't work.
+>
+
 * All styles
   * url
   * blupurple
