@@ -1,5 +1,4 @@
-### cooldown
----
+# Cooldown
 
 ```js
 module.exports = {
