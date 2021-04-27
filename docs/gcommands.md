@@ -1,12 +1,11 @@
-### Getting started with GCommands
----
+# Getting started with GCommands
 
-## Need have discord.js v12
+### Need have discord.js v12
 ```
 npm i gcommands
 ```
 
-## Creating index.js file
+### Creating index.js file
 ```js
 const { GCommands } = require("gcommands");
 const Discord = require("discord.js");
