@@ -33,8 +33,8 @@ client.on("ready", () => {
 client.login("token")
 ```
 
-In the `cmdDir` parameter, enter the name of folder to which you will add commands.
-`errorMessage` parameter is used to write this message when the command does not exist.
+In the `cmdDir` parameter, enter the name of folder to which you will add commands.<br>
+`errorMessage` parameter is used to write this message when the command does not exist.<br>
 `slash.Slash` parameter determines whether you want slash commands / normal or both.
 
 > 
