@@ -5,6 +5,12 @@
 npm i gcommands
 ```
 
+### Dev build
+```
+npm install github:Garlic-Team/GCommands#dev
+```
+
+
 ### Creating index.js file
 ```js
 const { GCommands } = require("gcommands");
