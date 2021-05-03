@@ -39,5 +39,5 @@ module.exports = {
 };
 ```
 
-Enter the boolean in the `slash` parameter.
+Enter the boolean in the `slash` parameter.<br>
 Disable slash system for 1 command.
