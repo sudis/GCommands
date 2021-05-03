@@ -31,3 +31,8 @@ module.exports = {
 	}
 };
 ```
+
+# Get guild prefix
+```js
+client.user.getGuildPrefix("guildId")
+```
