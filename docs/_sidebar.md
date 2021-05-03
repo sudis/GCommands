@@ -10,6 +10,8 @@
 * [Features](features.md)
   * [Buttons](features/buttons.md)
   * [Embeds](features/embeds.md) 
+  * [Database](features/database.md)
+  * [GuildPrefix](features/guildprefix.md)
   * [allowedMentions](features/allowedmentions.md) 
   * [inlineReply](features/inlinereply.md) 
   * [Events](features/events.md) 
