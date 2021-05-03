@@ -40,3 +40,4 @@ module.exports = {
 ```
 
 Enter the boolean in the `slash` parameter.
+Disable slash system for 1 command.
