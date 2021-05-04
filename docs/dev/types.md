@@ -56,7 +56,7 @@ module.exports = {
 			return;
 		}
 
-		console.log(slash.data.resolved.channels)
+		console.log(slash.data.resolved)
 		return "My ping is `" + Math.round(client.ws.ping) + "ms`"
 		/*client.api.interactions(slash.id, slash.token).callback.post({
 			data: {
