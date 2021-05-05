@@ -1,17 +1,17 @@
-# Types to args (for slash)
+# Types + Description (slash)
 
 ### All types:
 <img src="https://i.imgur.com/FWCOevD.png">
 Default type: 3
 
-Format: `expectedArgs: '<channel:7>'` | name:type
+Format: `expectedArgs: '<channel:7:description>'` | name:type
 
 ### Type 7 example:
 ```js
 module.exports = {
 	name: "setchannel",
 	description: "set channel",
-	expectedArgs: '<channel:7>',
+	expectedArgs: '<channel:7:select channel>',
 	minArgs: 1,
 	run: async(client, slash, message, args) => {
 		if(message) {
@@ -42,9 +42,9 @@ module.exports = {
 module.exports = {
 	name: "channel",
 	description: "set channel",
-	expectedArgs: '<channel:7>',
+	expectedArgs: '<channel:7:select channel>',
 	subCommandGroup: "set",
-	subCommand: ["admin;<channel:6>","game;<channel:6>"], 
+	subCommand: ["admin;<channel:7:select channel>","game;<channel:7:select game channel>"], 
 	minArgs: 1,
 	run: async(client, slash, message, args) => {
 		if(message) {
