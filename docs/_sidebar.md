@@ -18,3 +18,4 @@
 * [DEV BUILD](dev.md)
   * [GuildPrefix](dev/guildprefix.md)
   * [Types](dev/types.md) 
+  * [GEvents](dev/gevents.md) 
