@@ -1,7 +1,7 @@
 module.exports = {
 	name: "messageReactionRemoveAll",
-    once: false,
+    	once: false,
 	run: async(client, message) => {
-        console.error(`all reactions are removed from a message`);
+        	console.log(`all reactions are removed from a message`);
 	}
 };
