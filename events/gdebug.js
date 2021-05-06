@@ -1,7 +1,7 @@
 module.exports = {
 	name: "gDebug",
-  once: false,
+  	once: false,
 	run: async(client, debug) => {
-    console.log(debug)
+    		console.log(debug)
 	}
 };
