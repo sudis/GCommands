@@ -1,7 +1,7 @@
 module.exports = {
 	name: "messageDeleteBulk",
-    once: false,
+    	once: false,
 	run: async(client, messages) => {
-        console.log(`messages are deleted -> ${messages}`);
+        	console.log(`messages are deleted -> ${messages}`);
 	}
 };
