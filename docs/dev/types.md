@@ -4,7 +4,7 @@
 <img src="https://i.imgur.com/FWCOevD.png">
 Default type: 3
 
-Format: `expectedArgs: '<channel:7:description>'` | name:type:description
+Format: `expectedArgs: '<channel:7:description>'` | `name:type:description`
 
 ### Type 7 example:
 ```js
