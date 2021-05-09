@@ -3,6 +3,7 @@
   * [subCommand](commandparameters/subcommand.md)
   * [permissions](commandparameters/permissions.md) 
   * [roles](commandparameters/roles.md) 
+  * [aliases](commandparameters/aliases.md)  
   * [slash](commandparameters/slash.md)  
   * [expectedArgs](commandparameters/expectedargs.md) 
   * [cooldown](commandparameters/cooldown.md) 
