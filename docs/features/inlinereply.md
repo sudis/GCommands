@@ -3,6 +3,7 @@
 ### How use inlineReply without discord.js v13?
 ```js
 message.inlineReply("go hi")
+message.inlineReply("hahah").then(msg => {msg.edit("fou")})
 
 message.buttonsWithReply("Buttons POG", {
     buttons: [
