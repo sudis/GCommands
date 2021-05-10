@@ -23,10 +23,10 @@ client.on("guildBannerUpdate", (newGuild, oldBanner, newBanner) => {})
 client.on("guildAfkChannelUpdate", (newGuild, oldAfkChannel, newAfkChannel) => {})
 client.on("guildVanityURLUpdate", (newGuild, oldVanity, newVanity) => {})
 client.on("guildFeaturesUpdate", (newGuild, oldFeatures, newFeatures) => {})
-client.on("guildAcronymUpdate", (newGuild, oldAcronym, newArconym) => {})
+client.on("guildAcronymUpdate", (newGuild, oldAcronym, newAcronym) => {})
 client.on("guildOwnerUpdate", (newGuild, oldOwner, newOwner) => {})
-client.on("guildPartneredUpdate", (newGuild, oldPartner, newPartner) => {})
-client.on("guildVerifiedUpdate", (newGuild, oldVerified, newVerified) => {})
+client.on("guildPartnerUpdate", (newGuild, oldPartner, newPartner) => {})
+client.on("guildVerifyUpdate", (newGuild, oldVerified, newVerified) => {})
 ```
 
 ### Channels
