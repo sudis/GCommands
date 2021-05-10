@@ -33,7 +33,7 @@ client.on("ready", () => {
         database: {
             type: "mongodb", //sqlite/mongodb
             url: "mongodb+srv://" //mongourl
-        } //DB only for dev build now!
+        }
     })
     
     console.log("Ready")
