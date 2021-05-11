@@ -34,5 +34,31 @@ module.exports = {
 };
 ```
 
+```js
+module.exports = {
+    name: "xxx",
+    description: "xxx",
+	subCommandGroup: "user",
+	subCommand: [
+		{
+			name: "get", // sub command name
+			description: "get user", // sub command description
+			options: [
+				{
+					name: "user",
+					type: 6,
+					description: "get user",
+					required: false
+				}
+			]
+		}
+	],
+    run: async(client, slash) => {
+        console.log(slash)
+        // ...
+  }
+};
+```
+
 If you want to use `subCommand`, you currently need to specify arguments for each.<br>
 The `minArgs` argument still works.<br>
