@@ -25,15 +25,10 @@ message.buttons("Buttons POG", {
 })
 
 // in slash command
-client.api.interactions(slash.id, slash.token).callback.post({
-    data: {
-        type: 4,
-        data: {
-            content: "hi",
-            allowedMentions: { parse: ['users'], repliedUser: true }
-        },
-    }
-})
+return {
+    content: "hi",
+    allowedMentions: { parse: [], repliedUser: true }
+}
 
 // in client | discord.js v12
 new Discord.Client({disableMentions:"everyone"})
