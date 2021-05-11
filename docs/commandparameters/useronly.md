@@ -4,7 +4,7 @@
 module.exports = {
 	name: "NAME",
 	description: "DESCRIPTION",
-	ownerOnly: "id member",
+	userOnly: "id member",
 	run: async(client, slash, message) => {
 		if(message) {
 			return message.inlineReply("hi", {
@@ -26,4 +26,4 @@ module.exports = {
 };
 ```
 
-Enter the member id in the `ownerOnly` parameter.
+Enter the member id in the `userOnly` parameter.
