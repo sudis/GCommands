@@ -1,4 +1,4 @@
-# ownerOnly
+# userOnly
 
 ```js
 module.exports = {
