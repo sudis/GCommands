@@ -12,6 +12,7 @@ client.on("gDebug", (debug) => {
 client.on("guildMemberNicknameUpdate", (newMember, oldNick, newNick) => {})
 client.on("guildMemberUnboost", (newMember, oldPremiumSince, newPremiumSince) => {})
 client.on("guildMemberBoost", (newMember, oldPremiumSince, newPremiumSince) => {})
+client.on("guildMemberAcceptRules", (member) => {})
 ```
 
 ### Guild
