@@ -19,5 +19,4 @@
 * [**Other**](dev.md)
   * [GuildPrefix](dev/guildprefix.md)
   * [GEvents EventHandler](dev/gevents.md) 
-* [**DEV**](dev.md)
   * [Ephemeral](dev/ephemeral.md)
