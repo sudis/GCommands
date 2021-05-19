@@ -11,7 +11,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     
-    <link rel="preload" href="/assets/css/0.styles.1c18ed07.css" as="style"><link rel="preload" href="/assets/js/app.cda373a2.js" as="script"><link rel="preload" href="/assets/js/3.368aeefd.js" as="script"><link rel="preload" href="/assets/js/6.8b689ad5.js" as="script"><link rel="preload" href="/assets/js/15.f3f756cb.js" as="script"><link rel="preload" href="/assets/js/7.c76a869b.js" as="script"><link rel="preload" href="/assets/js/5.50f75f06.js" as="script"><link rel="prefetch" href="/assets/js/1.7aeb2d8b.js"><link rel="prefetch" href="/assets/js/10.f1bc74d7.js"><link rel="prefetch" href="/assets/js/11.541538c5.js"><link rel="prefetch" href="/assets/js/12.0ed4eefa.js"><link rel="prefetch" href="/assets/js/13.89a17a2d.js"><link rel="prefetch" href="/assets/js/14.20b17da7.js"><link rel="prefetch" href="/assets/js/16.5d390f61.js"><link rel="prefetch" href="/assets/js/17.2374f2c2.js"><link rel="prefetch" href="/assets/js/18.23132194.js"><link rel="prefetch" href="/assets/js/19.b20273be.js"><link rel="prefetch" href="/assets/js/20.5d6cd67f.js"><link rel="prefetch" href="/assets/js/21.cbd69c22.js"><link rel="prefetch" href="/assets/js/4.953b4211.js"><link rel="prefetch" href="/assets/js/8.1f8ed3e7.js"><link rel="prefetch" href="/assets/js/9.521085e5.js">
+    <link rel="preload" href="/assets/css/0.styles.1c18ed07.css" as="style"><link rel="preload" href="/assets/js/app.cd33b45b.js" as="script"><link rel="preload" href="/assets/js/3.368aeefd.js" as="script"><link rel="preload" href="/assets/js/6.8b689ad5.js" as="script"><link rel="preload" href="/assets/js/15.39b8cd01.js" as="script"><link rel="preload" href="/assets/js/7.c76a869b.js" as="script"><link rel="preload" href="/assets/js/5.50f75f06.js" as="script"><link rel="prefetch" href="/assets/js/1.7aeb2d8b.js"><link rel="prefetch" href="/assets/js/10.f1bc74d7.js"><link rel="prefetch" href="/assets/js/11.1a506992.js"><link rel="prefetch" href="/assets/js/12.c924fdd5.js"><link rel="prefetch" href="/assets/js/13.123897ba.js"><link rel="prefetch" href="/assets/js/14.de17ae03.js"><link rel="prefetch" href="/assets/js/16.ac8f9c52.js"><link rel="prefetch" href="/assets/js/17.a42deba9.js"><link rel="prefetch" href="/assets/js/18.23132194.js"><link rel="prefetch" href="/assets/js/19.b20273be.js"><link rel="prefetch" href="/assets/js/20.98f10b75.js"><link rel="prefetch" href="/assets/js/21.f6caee6e.js"><link rel="prefetch" href="/assets/js/4.953b4211.js"><link rel="prefetch" href="/assets/js/8.1f8ed3e7.js"><link rel="prefetch" href="/assets/js/9.521085e5.js">
     <link rel="stylesheet" href="/assets/css/0.styles.1c18ed07.css">
   </head>
   <body>
@@ -137,7 +137,7 @@ SlashCommand<span class="token punctuation">.</span><span class="token constant"
         <span class="token comment">// ...</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
-</code></pre></div><h2 id="with-slash-group"><a href="#with-slash-group" class="header-anchor">#</a> With Slash Group</h2> <div class="language-js extra-class"><pre class="language-js"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+</code></pre></div><h2 id="with-slash-group"><a href="#with-slash-group" class="header-anchor">#</a> With Slash Group</h2> <span style="display:block;"><div class="language-js extra-class"><pre class="language-js"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
     name<span class="token operator">:</span> <span class="token string">&quot;xxx&quot;</span><span class="token punctuation">,</span>
     description<span class="token operator">:</span> <span class="token string">&quot;xxx&quot;</span><span class="token punctuation">,</span>
 	subCommandGroup<span class="token operator">:</span> <span class="token string">&quot;user&quot;</span><span class="token punctuation">,</span>
@@ -160,7 +160,37 @@ SlashCommand<span class="token punctuation">.</span><span class="token constant"
         <span class="token comment">// ...</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
-</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+</code></pre></div></span> <span style="display:none;"><div class="language-js extra-class"><pre class="language-js"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+    name<span class="token operator">:</span> <span class="token string">&quot;xxx&quot;</span><span class="token punctuation">,</span>
+    description<span class="token operator">:</span> <span class="token string">&quot;xxx&quot;</span><span class="token punctuation">,</span>
+	expectedArgs<span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            name<span class="token operator">:</span> <span class="token string">&quot;user&quot;</span><span class="token punctuation">,</span>
+            description<span class="token operator">:</span> <span class="token string">&quot;Get or edit permissions for a user&quot;</span><span class="token punctuation">,</span>
+            type<span class="token operator">:</span> SlashCommand<span class="token punctuation">.</span><span class="token constant">SUB_COMMAND_GROUP</span><span class="token punctuation">,</span>
+            options<span class="token operator">:</span> <span class="token punctuation">[</span>
+                <span class="token punctuation">{</span>
+                    name<span class="token operator">:</span> <span class="token string">&quot;get&quot;</span><span class="token punctuation">,</span>
+                    description<span class="token operator">:</span> <span class="token string">&quot;Get permissions for a user&quot;</span><span class="token punctuation">,</span>
+                    type<span class="token operator">:</span> SlashCommand<span class="token punctuation">.</span><span class="token constant">SUB_COMMAND</span><span class="token punctuation">,</span>
+                    options<span class="token operator">:</span> <span class="token punctuation">[</span>
+                        <span class="token punctuation">{</span>
+                            name<span class="token operator">:</span> <span class="token string">&quot;user&quot;</span><span class="token punctuation">,</span>
+                        	description<span class="token operator">:</span> <span class="token string">&quot;The user to get&quot;</span><span class="token punctuation">,</span>
+                            type<span class="token operator">:</span> SlashCommand<span class="token punctuation">.</span><span class="token constant">USER</span><span class="token punctuation">,</span>
+                            required<span class="token operator">:</span> <span class="token boolean">true</span>
+                        <span class="token punctuation">}</span>
+                    <span class="token punctuation">]</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">run</span><span class="token operator">:</span> <span class="token keyword">async</span><span class="token punctuation">(</span><span class="token parameter">client<span class="token punctuation">,</span> slash</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>slash<span class="token punctuation">)</span>
+        <span class="token comment">// ...</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div></span></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
       ←
       <a href="/guide/beginner/basicbot.html" class="prev">
         Making a basic bot
@@ -169,6 +199,6 @@ SlashCommand<span class="token punctuation">.</span><span class="token constant"
       </a>
       →
     </span></p></div> </main></div><div class="global-ui"><!----></div></div>
-    <script src="/assets/js/app.cda373a2.js" defer></script><script src="/assets/js/3.368aeefd.js" defer></script><script src="/assets/js/6.8b689ad5.js" defer></script><script src="/assets/js/15.f3f756cb.js" defer></script><script src="/assets/js/7.c76a869b.js" defer></script><script src="/assets/js/5.50f75f06.js" defer></script>
+    <script src="/assets/js/app.cd33b45b.js" defer></script><script src="/assets/js/3.368aeefd.js" defer></script><script src="/assets/js/6.8b689ad5.js" defer></script><script src="/assets/js/15.39b8cd01.js" defer></script><script src="/assets/js/7.c76a869b.js" defer></script><script src="/assets/js/5.50f75f06.js" defer></script>
   </body>
 </html>
