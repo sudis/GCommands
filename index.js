@@ -7,18 +7,23 @@ client.on("ready", () => {
     new GCommands(client, {
         cmdDir: "commands",
         eventDir: "events",
-        errorMessage: "Error :(", // optional
+        language: "english",
+        unkownCommandMessage: false,
         slash: {
            slash: 'both', //true = slash only, false = only normal, both = slash and normal
            prefix: '.' // for normal commands
         },
-        cooldown: {
-            message: "Please wait {cooldown} more second(s) before reusing the \`{cmdname}\` command.",
-            default: 3 // default cooldown for all commands
-        },
+        defaultCooldown: 3,
         database: {
-            type: "mongodb", //sqlite/mongodb
-            url: "mongodb+srv://" //mongourl
+            type: "mongodb",
+            url: "mongodb+srv://",
+
+             // if you want mariadb
+            host: "ip",
+            username: "username",
+            password: "password",
+            databaseName: "db name",
+            port: "port"
         }
     })
     
