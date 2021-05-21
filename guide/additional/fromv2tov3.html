@@ -11,8 +11,8 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     
-    <link rel="preload" href="/assets/css/0.styles.18a3c460.css" as="style"><link rel="preload" href="/assets/js/app.2594b94b.js" as="script"><link rel="preload" href="/assets/js/3.368aeefd.js" as="script"><link rel="preload" href="/assets/js/6.035516be.js" as="script"><link rel="preload" href="/assets/js/13.0584c765.js" as="script"><link rel="preload" href="/assets/js/5.04f78c73.js" as="script"><link rel="prefetch" href="/assets/js/1.7aeb2d8b.js"><link rel="prefetch" href="/assets/js/10.dfd2a03e.js"><link rel="prefetch" href="/assets/js/11.1c77623d.js"><link rel="prefetch" href="/assets/js/12.6020c1e5.js"><link rel="prefetch" href="/assets/js/14.142d6f97.js"><link rel="prefetch" href="/assets/js/15.59246e6f.js"><link rel="prefetch" href="/assets/js/16.b32d3261.js"><link rel="prefetch" href="/assets/js/17.c9b1350a.js"><link rel="prefetch" href="/assets/js/18.b845bf83.js"><link rel="prefetch" href="/assets/js/19.60d033e0.js"><link rel="prefetch" href="/assets/js/20.d873ab9b.js"><link rel="prefetch" href="/assets/js/21.2ce030e6.js"><link rel="prefetch" href="/assets/js/4.953b4211.js"><link rel="prefetch" href="/assets/js/7.c76a869b.js"><link rel="prefetch" href="/assets/js/8.1f8ed3e7.js"><link rel="prefetch" href="/assets/js/9.457bf9af.js">
-    <link rel="stylesheet" href="/assets/css/0.styles.18a3c460.css">
+    <link rel="preload" href="/assets/css/0.styles.1c18ed07.css" as="style"><link rel="preload" href="/assets/js/app.9bbefe84.js" as="script"><link rel="preload" href="/assets/js/3.368aeefd.js" as="script"><link rel="preload" href="/assets/js/6.8b689ad5.js" as="script"><link rel="preload" href="/assets/js/13.daea584f.js" as="script"><link rel="preload" href="/assets/js/5.50f75f06.js" as="script"><link rel="prefetch" href="/assets/js/1.7aeb2d8b.js"><link rel="prefetch" href="/assets/js/10.f1bc74d7.js"><link rel="prefetch" href="/assets/js/11.cdcc104a.js"><link rel="prefetch" href="/assets/js/12.0570bdb8.js"><link rel="prefetch" href="/assets/js/14.5db21447.js"><link rel="prefetch" href="/assets/js/15.5a96f1ff.js"><link rel="prefetch" href="/assets/js/16.5d390f61.js"><link rel="prefetch" href="/assets/js/17.45a01273.js"><link rel="prefetch" href="/assets/js/18.23132194.js"><link rel="prefetch" href="/assets/js/19.a3920d69.js"><link rel="prefetch" href="/assets/js/20.f5591431.js"><link rel="prefetch" href="/assets/js/21.605338dc.js"><link rel="prefetch" href="/assets/js/4.953b4211.js"><link rel="prefetch" href="/assets/js/7.c76a869b.js"><link rel="prefetch" href="/assets/js/8.1f8ed3e7.js"><link rel="prefetch" href="/assets/js/9.521085e5.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.1c18ed07.css">
   </head>
   <body>
     <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/gcommands.png" alt="GCommands" class="logo"> <span class="site-name can-hide">GCommands</span></a> <div class="links"><div class="user-options-before"><div class="branch-selector-wrapper"><label for="branch-selector" class="branch-selector-label">GCommands Version:</label> <select id="branch-selector"><option selected="selected" value="2.x">
@@ -54,6 +54,15 @@
 </span></span>
 <span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line"> client.on(&quot;gDebug&quot;)
 </span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line"> new GCommands().on(&quot;debug&quot;)
+</span></span>
+<span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line"> errorMessage
+</span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line"> unkownCommandMessage: true/false
+</span></span>
+<span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line"> cooldown.message: &quot;Please wait {cooldown} more second(s) before reusing the \`{cmdname}\` command.&quot;
+</span><span class="token prefix deleted">-</span><span class="token line"> commandos.requiredRoleMessage
+</span><span class="token prefix deleted">-</span><span class="token line"> commandos.requiredPermissionMessage
+</span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line"> language: &quot;czech&quot;, //english, spanish, portuguese, russian, german, czech
+</span><span class="token prefix inserted">+</span><span class="token line"> ownLanguageFile: require(&quot;./message.json&quot;)
 </span></span></code></pre></div><h2 id="custom-language"><a href="#custom-language" class="header-anchor">#</a> Custom Language</h2> <p>Do you want to customize the messages for you? So just do the following things.</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">new</span> <span class="token class-name">GCommands</span><span class="token punctuation">(</span>client<span class="token punctuation">,</span> <span class="token punctuation">{</span>
     language<span class="token operator">:</span> <span class="token string">&quot;czech&quot;</span><span class="token punctuation">,</span> <span class="token comment">//english, spanish, portuguese, russian, german, czech</span>
     ownLanguageFile<span class="token operator">:</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;./message.json&quot;</span><span class="token punctuation">)</span> <span class="token comment">// no required</span>
@@ -66,6 +75,7 @@
 </span><span class="token prefix deleted">-</span><span class="token line"> commandos.requiredPermissionMessage
 </span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line"> language: &quot;czech&quot;, //english, spanish, portuguese, russian, german, czech
 </span><span class="token prefix inserted">+</span><span class="token line"> ownLanguageFile: require(&quot;./message.json&quot;)
+</span><span class="token prefix inserted">+</span><span class="token line"> unkownCommandMessage: true/false
 </span></span></code></pre></div><p>Create a message.json where you can then put this:</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
     <span class="token property">&quot;MISSING_PERMISSIONS&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
 		<span class="token property">&quot;english&quot;</span><span class="token operator">:</span> <span class="token string">&quot;You must have the {PERMISSION} permission in order to use this command.&quot;</span><span class="token punctuation">,</span>
@@ -75,6 +85,15 @@
 		<span class="token property">&quot;german&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Du benötigst die Berechtigung {PERMISSION}, um diesen Befehl nutzen zu können.&quot;</span><span class="token punctuation">,</span>
         <span class="token property">&quot;czech&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Chybí ti {PERMISSION} oprávnění k použití tohoto příkazu.&quot;</span><span class="token punctuation">,</span>
 		<span class="token property">&quot;slovak&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Chýba ti {PERMISSION} oprávnenie k použitiu tohoto príkazu.&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;MISSING_CLIENT_PERMISSIONS&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+		<span class="token property">&quot;english&quot;</span><span class="token operator">:</span> <span class="token string">&quot;The client must have {PERMISSION} permission to use this command.&quot;</span><span class="token punctuation">,</span>
+		<span class="token property">&quot;spanish&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Para usar este comando, el cliente debe tener el permiso {PERMISSION}.&quot;</span><span class="token punctuation">,</span>
+		<span class="token property">&quot;portuguese&quot;</span><span class="token operator">:</span> <span class="token string">&quot;O cliente deve ter permissão {PERMISSION} para usar este comando.&quot;</span><span class="token punctuation">,</span>
+		<span class="token property">&quot;russian&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Чтобы использовать эту команду, клиент должен иметь полномочия {PERMISSION}.&quot;</span><span class="token punctuation">,</span>
+		<span class="token property">&quot;german&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Der Client benötigt die Berechtigung {PERMISSION}, um diesen Befehl verwenden zu können.&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;czech&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Client musí mít {PERMISSION} oprávnění k použití tohoto příkazu.&quot;</span><span class="token punctuation">,</span>
+		<span class="token property">&quot;slovak&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Client musí mať {PERMISSION} oprávnenia k použitiu tohoto príkazu.&quot;</span>
     <span class="token punctuation">}</span><span class="token punctuation">,</span>
 	<span class="token property">&quot;MISSING_ROLES&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
 		<span class="token property">&quot;english&quot;</span><span class="token operator">:</span> <span class="token string">&quot;You do not have the required roles to use this command! You need one of the following: {ROLES}&quot;</span><span class="token punctuation">,</span>
@@ -204,6 +223,6 @@ module<span class="token punctuation">.</span>exports <span class="token operato
       <a href="/guide/miscellaneous/moreevents.html" class="prev">
         More Events
       </a></span> <!----></p></div> </main></div><div class="global-ui"><!----></div></div>
-    <script src="/assets/js/app.2594b94b.js" defer></script><script src="/assets/js/3.368aeefd.js" defer></script><script src="/assets/js/6.035516be.js" defer></script><script src="/assets/js/13.0584c765.js" defer></script><script src="/assets/js/5.04f78c73.js" defer></script>
+    <script src="/assets/js/app.9bbefe84.js" defer></script><script src="/assets/js/3.368aeefd.js" defer></script><script src="/assets/js/6.8b689ad5.js" defer></script><script src="/assets/js/13.daea584f.js" defer></script><script src="/assets/js/5.50f75f06.js" defer></script>
   </body>
 </html>
