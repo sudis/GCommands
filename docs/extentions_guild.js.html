@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Source: GEvents.js</title>
+    <title>Source: extentions/guild.js</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -37,7 +37,7 @@
         <div class="burger-line-3"></div>
     </div>
 
-    <h1 class="page-title">Source: GEvents.js</h1>
+    <h1 class="page-title">Source: extentions/guild.js</h1>
 
     
 
@@ -46,95 +46,39 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>const { Collection } = require("discord.js");
-const Color = require("./utils/color/Color");
-const { promisify } = require('util');
-const path = require('path');
-const { Events } = require("./utils/Constants");
-const glob = promisify(require('glob'));
+            <pre class="prettyprint source linenums"><code>const { Structures } = require("discord.js")
 
-/**
- * The GEvents class
- */
-class GEvents {
-
+module.exports = Structures.extend('Guild', Guild => {
     /**
-     * Creates new GEvents instance
-     * @param {DiscordClient} client 
-     * @param {GEventsOptions} options 
+     * The GuildStructure structure
+     * @class
     */
-    constructor(GCommandsClient, options = {}) {
-        if (typeof GCommandsClient.client !== 'object') return console.log(new Color("&amp;d[GCommands EVENTS] &amp;cNo discord.js client provided!",{json:false}).getText());
-        if (!Object.keys(options).length) return console.log(new Color("&amp;d[GCommands EVENTS] &amp;cNo default options provided!",{json:false}).getText());
-        if(!options.eventDir) return console.log(new Color("&amp;d[GCommands EVENTS] &amp;cNo default options provided! (eventDir)",{json:false}).getText());
+
+    class GCommandsGuild extends Guild {
+        constructor(...args) {
+            super(...args)
+        }
 
         /**
-         * GEventsOptions options
-         * @type {GEventsOptions}
-         * @property {String} eventDir
+         * Method to getCommandPrefix
+         * @returns {Promise}
         */
+        async getCommandPrefix() {
+			return this.client.dispatcher.getGuildPrefix(this.id);
+        }
 
-        this.eventDir = options.eventDir;
-
-        this.GCommandsClient = GCommandsClient;
-        this.client = GCommandsClient.client;
-        this.client.events = new Collection();
-
-        this.__loadEventFiles();
+        /**
+         * Method to setCommandPrefix
+         * @returns {Boolean}
+        */
+		async setCommandPrefix(prefix) {
+			this.client.dispatcher.setGuildPrefix(prefix, this.id);
+			this.client.emit('commandPrefixChange', this, this._commandPrefix);
+		}
     }
 
-    /**
-     * Internal method to loadEventsFiles
-     * @returns {void}
-     * @private
-    */
-    async __loadEventFiles() {
-        return glob(`./${this.eventDir}/**/*.js`).then(async(events) => {
-            for (const eventFile of events) {
-				const { name } = path.parse(eventFile);
-                var File;
-
-                try {
-                    File = await require("../../../"+this.eventDir+"/"+name)
-                    console.log(new Color("&amp;d[GCommands EVENTS] &amp;aLoaded (File): &amp;e➜   &amp;3" + name, {json:false}).getText());
-                } catch(e) {
-                    try {
-                        File = await require("../../../"+eventFile.split("./")[1])
-                        console.log(new Color("&amp;d[GCommands EVENTS] &amp;aLoaded (File): &amp;e➜   &amp;3" + name, {json:false}).getText());
-                    } catch(e) {
-                        try {
-                            File = await require("../"+this.eventDir+"/"+name);
-                            console.log(new Color("&amp;d[GCommands EVENTS] &amp;aLoaded (File): &amp;e➜   &amp;3" + name, {json:false}).getText());
-                        } catch(e) {
-                            this.GCommandsClient.emit(Events.DEBUG, new Color("&amp;d[GCommands EVENTS Debug] "+e).getText())
-                            console.log(new Color("&amp;d[GCommands EVENTS] &amp;cCan't load " + name).getText());
-                        }
-                    }
-                }
-
-				this.client.events.set(File.name, File);
-            }
-            this.__loadEvents()
-        })
-    }
-
-    /**
-     * Internal method to loadEvents
-     * @returns {void}
-     * @private
-    */
-    async __loadEvents() {
-        this.client.events.forEach(event => {
-            if (event.once) {
-                this.client.once(event.name, (...args) => event.run(this.client, ...args));
-            } else {
-                this.client.on(event.name, (...args) => event.run(this.client, ...args));
-            }
-        })
-    }
-}
-
-module.exports = GEvents;</code></pre>
+    return GCommandsGuild;
+})</code></pre>
         </article>
     </section>
 
