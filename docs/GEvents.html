@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Class: GEvents</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <script src="scripts/nav.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.3/fuse.min.js"></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link type="text/css" rel="stylesheet" href="styles/skyceil.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="utilities">
+        <div id="search">
+            <input type="text" id="search-box" placeholder="Search"><br>
+            <div id="search-results" style="display: none;"></div>
+        </div>
+        <button class="theme" data-theme="light"><i class="fas fa-moon"></i></button>
+    </div>
+    <hr>
+    <h4><a href="index.html">Home</a></h4><h5 class="no-bottom must-underline">Classes</h5><ul><li><span class="small-icon C">C</span><a href="Buttons.html">Buttons</a></li><li><span class="small-icon C">C</span><b><a href="Color.html">Color</a></b><ul class="has-class-methods"><li><span class="small-icon F">F</span><a href="Color.html#getRGB">getRGB</a></li><li><span class="small-icon F">F</span><a href="Color.html#getText">getText</a></li><li><span class="small-icon M">M</span><a href="Color.html#text">text</a></li></ul></li><li><span class="small-icon C">C</span><b><a href="GCommands.html">GCommands</a></b><ul class="has-class-methods"><li><span class="small-icon M">M</span><a href="GCommands.html#cmdDir">cmdDir</a></li><li><span class="small-icon M">M</span><a href="GCommands.html#cooldownDefault">cooldownDefault</a></li><li><span class="small-icon M">M</span><a href="GCommands.html#database">database</a></li><li><span class="small-icon M">M</span><a href="GCommands.html#eventDir">eventDir</a></li><li><span class="small-icon M">M</span><a href="GCommands.html#prefix">prefix</a></li><li><span class="small-icon M">M</span><a href="GCommands.html#slash">slash</a></li><li><span class="small-icon M">M</span><a href="GCommands.html#unkownCommandMessage">unkownCommandMessage</a></li></ul></li><li><span class="small-icon C">C</span><a href="GCommandsBase.html">GCommandsBase</a></li><li><span class="small-icon C">C</span><b><a href="GCommandsDispatcher.html">GCommandsDispatcher</a></b><ul class="has-class-methods"><li><span class="small-icon F">F</span><a href="GCommandsDispatcher.html#addInhibitor">addInhibitor</a></li><li><span class="small-icon F">F</span><a href="GCommandsDispatcher.html#getGuildPrefix">getGuildPrefix</a></li><li><span class="small-icon F">F</span><a href="GCommandsDispatcher.html#removeInhibitor">removeInhibitor</a></li><li><span class="small-icon F">F</span><a href="GCommandsDispatcher.html#setGuildPrefix">setGuildPrefix</a></li><li><span class="small-icon M">M</span><a href="GCommandsDispatcher.html#client">client</a></li></ul></li><li><span class="small-icon C">C</span><b><a href="GCommandsEventLoader.html">GCommandsEventLoader</a></b><ul class="has-class-methods"><li><span class="small-icon F">F</span><a href="GCommandsEventLoader.html#createAPIMessage">createAPIMessage</a></li><li><span class="small-icon F">F</span><a href="GCommandsEventLoader.html#getSlashArgs">getSlashArgs</a></li><li><span class="small-icon F">F</span><a href="GCommandsEventLoader.html#inhibit">inhibit</a></li><li><span class="small-icon M">M</span><a href="GCommandsEventLoader.html#GCommandsClient">GCommandsClient</a></li></ul></li><li><span class="small-icon C">C</span><b><a href="GEvents.html">GEvents</a></b><ul class="has-class-methods"><li><span class="small-icon M">M</span><a href="GEvents.html#eventDir">eventDir</a></li></ul></li></ul><h5 class="no-bottom must-underline">Events</h5><ul><li><span class="small-icon E">E</span><a href="GCommands.html#event:debug">debug</a></li></ul><h4>Global</h4><ul><li><a href="global.html#ReturnSystem">ReturnSystem</a></li></ul>
+</nav>
+
+<div id="main">
+    <div class="burger">
+        <div class="burger-line-1"></div>
+        <div class="burger-line-2"></div>
+        <div class="burger-line-3"></div>
+    </div>
+
+    <h1 class="page-title">Class: GEvents</h1>
+
+    
+
+
+
+
+<section>
+<header>
+    <hr>
+    
+        <h2><span class="attribs"><span class="type-signature"></span></span>GEvents<span class="signature">(client, options)</span><span class="type-signature"></span></h2>
+        
+            <div class="class-description">The GEvents class</div>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+    
+    <h2>Constructor</h2>
+    
+
+    
+    <h4 class="name" id="GEvents"><span class="type-signature"></span>new GEvents<span class="signature">(client, options)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Creates new GEvents instance
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<div class="table-box">
+    <table class="params">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            <tr>
+                
+                    <td class="name"><code>client</code></td>
+                
+
+                <td class="type">
+                
+                    
+<span class="param-type">DiscordClient</span>
+
+
+                
+                </td>
+
+                
+
+                
+
+                <td class="description last"></td>
+            </tr>
+
+        
+
+            <tr>
+                
+                    <td class="name"><code>options</code></td>
+                
+
+                <td class="type">
+                
+                    
+<span class="param-type">GEventsOptions</span>
+
+
+                
+                </td>
+
+                
+
+                
+
+                <td class="description last"></td>
+            </tr>
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="GEvents.js.html">GEvents.js</a>, <a href="GEvents.js.html#line11">line 11</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id="eventDir"><span class="type-signature"></span>eventDir<span class="type-signature"> :GEventsOptions</span></h4>
+
+
+
+
+<div class="description">
+    GEventsOptions options
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">GEventsOptions</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<div class="table-box">
+    <table class="props">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            <tr>
+                
+                    <td class="name"><code>eventDir</code></td>
+                
+
+                <td class="type">
+                
+                    
+<span class="param-type">String</span>
+
+
+                
+                </td>
+
+                
+
+                
+
+                <td class="description last"></td>
+            </tr>
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="GEvents.js.html">GEvents.js</a>, <a href="GEvents.js.html#line29">line 29</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+<hr>
+        
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Wed May 26 2021 13:50:20 GMT+0200 (stredoeurópsky letný čas) using <a href="https://github.com/devsnowflake/jsdoc-skyceil">Skyceil Theme</a>
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+
+</body>
+</html>
