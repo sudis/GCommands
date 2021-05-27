@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Global</title>
+    <title>Source: moreEvents/Classes/ButtonEvent.js</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -37,131 +37,124 @@
         <div class="burger-line-3"></div>
     </div>
 
-    <h1 class="page-title">Global</h1>
+    <h1 class="page-title">Source: moreEvents/Classes/ButtonEvent.js</h1>
 
     
 
 
 
-
-<section>
-<header>
-    <hr>
     
-        <h2></h2>
-        
-    
-</header>
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/* From discord-buttons edited */
+const {APIMessage, Client} = require("discord.js")
+const Color = require("../../utils/color/Color")
 
-<article>
-    <div class="container-overview">
-    
-        
+/**
+ * The ButtonEvent class
+ */
+class ButtonEvent {
 
-        
+    /**
+     * Creates new ButtonEvent instance
+     * @param {Client} client
+     * @param {Object} data 
+    */
+    constructor(client, data) {
+        this.client = client;
 
+        this.id = data.data.custom_id;
 
+        this.version = data.version;
 
+        this.token = data.token;
 
-        
-    
-    </div>
+        this.discordID = data.id;
 
-    
+        this.applicationID = data.application_id;
 
-    
+        this.guild = data.guild_id ? client.guilds.cache.get(data.guild_id) : undefined;
 
-    
+        this.channel = client.channels.cache.get(data.channel_id);
 
-    
+        this.clicker = {};
 
-    
+        if (this.guild) {
+            this.clicker.member = this.guild.members.resolve(data.member.user.id);
+            this.clicker.user = this.client.users.resolve(data.member.user.id);
+        } else {
+            this.clicker.user = this.client.users.resolve(data.user.id);
+        }
 
-    
+        this.replied = false;
+        this.deferred = false;
+    }
 
-    
-        <h3 class="subsection-title">Members</h3>
+    /**
+     * Method to defer
+     * @param {Boolean} ephemeral 
+    */
+    async defer(ephemeral) {
+        if (this.deferred || this.replied) return console.log(new Color('&amp;d[GCommands] &amp;cThis button already has a reply').getText());
+        await this.client.api.interactions(this.discordID, this.token).callback.post({
+            data: {
+                type: 6,
+                data: {
+                    flags: ephemeral ? 1 &lt;&lt; 6 : null,
+                },
+            },
+        });
+        this.deferred = true;
+    }
 
-        
-            
-<h4 class="name" id="ReturnSystem"><span class="type-signature"></span>ReturnSystem<span class="type-signature"></span></h4>
+    /**
+     * Method to think
+     * @param {Boolean} ephemeral 
+    */
+    async think(ephemeral) {
+        if (this.deferred || this.replied) return console.log(new Color('&amp;d[GCommands] &amp;cThis button already has a reply').getText());
+        await this.client.api.interactions(this.discordID, this.token).callback.post({
+            data: {
+                type: 5,
+                data: {
+                    flags: ephemeral ? 1 &lt;&lt; 6 : null,
+                },
+            },
+        });
+        this.deferred = true;
+    }
 
+    /**
+     * Method to edit
+     * @param {String} content
+     * @param {Object} options 
+    */
+    async edit(content, options = null) {
+        if(options) {
+            var finalData = [];
+            if(!Array.isArray(options)) options = [[options]]
+            options.forEach(option => {
+                finalData.push({
+                    type: 1,
+                    components: option
+                })
+            })
 
+            return this.client.api.webhooks(this.client.user.id, this.token).messages["@original"].patch({ data: {
+                content: content,
+                components: finalData
+            }})
+        } else {
+            return this.client.api.webhooks(this.client.user.id, this.token).messages["@original"].patch({ data: {
+                content: content
+            }})
+        }
+    }
+}
 
-
-<div class="description">
-    Return system for slash
-</div>
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="utils_EventLoader.js.html">utils/EventLoader.js</a>, <a href="utils_EventLoader.js.html#line591">line 591</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint example linenums"><code>return {     content: "hi",     ephemeral: true,     allowedMentions: { parse: [], repliedUser: true } }</code></pre>
-
-
-
-<hr>
-        
-    
-
-    
-
-    
-
-    
-</article>
-
-</section>
+module.exports = ButtonEvent;</code></pre>
+        </article>
+    </section>
 
 
 

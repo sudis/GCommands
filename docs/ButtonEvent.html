@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Class: GCommandsDispatcher</title>
+    <title>Class: ButtonEvent</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -37,7 +37,7 @@
         <div class="burger-line-3"></div>
     </div>
 
-    <h1 class="page-title">Class: GCommandsDispatcher</h1>
+    <h1 class="page-title">Class: ButtonEvent</h1>
 
     
 
@@ -48,9 +48,9 @@
 <header>
     <hr>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>GCommandsDispatcher<span class="signature">()</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>ButtonEvent<span class="signature">(client, data)</span><span class="type-signature"></span></h2>
         
-            <div class="class-description">The GCommansDispatcher class</div>
+            <div class="class-description">The ButtonEvent class</div>
         
     
 </header>
@@ -65,19 +65,97 @@
     
 
     
-    <h4 class="name" id="GCommandsDispatcher"><span class="type-signature"></span>new GCommandsDispatcher<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="ButtonEvent"><span class="type-signature"></span>new ButtonEvent<span class="signature">(client, data)</span><span class="type-signature"></span></h4>
     
 
     
 
 
 
+<div class="description">
+    Creates new ButtonEvent instance
+</div>
 
 
 
 
 
 
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<div class="table-box">
+    <table class="params">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            <tr>
+                
+                    <td class="name"><code>client</code></td>
+                
+
+                <td class="type">
+                
+                    
+<span class="param-type">Client</span>
+
+
+                
+                </td>
+
+                
+
+                
+
+                <td class="description last"></td>
+            </tr>
+
+        
+
+            <tr>
+                
+                    <td class="name"><code>data</code></td>
+                
+
+                <td class="type">
+                
+                    
+<span class="param-type">Object</span>
+
+
+                
+                </td>
+
+                
+
+                
+
+                <td class="description last"></td>
+            </tr>
+
+        
+        </tbody>
+    </table>
+</div>
 
 
 
@@ -114,7 +192,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="GCommandsDispatcher.js.html">GCommandsDispatcher.js</a>, <a href="GCommandsDispatcher.js.html#line4">line 4</a>
+        <a href="moreEvents_Classes_ButtonEvent.js.html">moreEvents/Classes/ButtonEvent.js</a>, <a href="moreEvents_Classes_ButtonEvent.js.html#line8">line 8</a>
     </li></ul></dd>
     
 
@@ -161,17 +239,25 @@
     
 
     
-        <h3 class="subsection-title">Members</h3>
+
+    
+        <h3 class="subsection-title">Methods</h3>
 
         
             
-<h4 class="name" id="client"><span class="type-signature"></span>client<span class="type-signature"></span></h4>
 
+    
+
+    
+    <h4 class="name" id="defer"><span class="type-signature">(async) </span>defer<span class="signature">(ephemeral)</span><span class="type-signature"></span></h4>
+    
+
+    
 
 
 
 <div class="description">
-    GCommandsDispatcher options
+    Method to defer
 </div>
 
 
@@ -180,12 +266,13 @@
 
 
 
-    <h5 class="subsection-title">Properties:</h5>
 
+
+    <h5>Parameters:</h5>
     
 
 <div class="table-box">
-    <table class="props">
+    <table class="params">
         <thead>
         <tr>
             
@@ -207,13 +294,13 @@
 
             <tr>
                 
-                    <td class="name"><code>client</code></td>
+                    <td class="name"><code>ephemeral</code></td>
                 
 
                 <td class="type">
                 
                     
-<span class="param-type">Object</span>
+<span class="param-type">Boolean</span>
 
 
                 
@@ -234,85 +321,6 @@
 
 
 
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="GCommandsDispatcher.js.html">GCommandsDispatcher.js</a>, <a href="GCommandsDispatcher.js.html#line11">line 11</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-<hr>
-        
-    
-
-    
-        <h3 class="subsection-title">Methods</h3>
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="addInhibitor"><span class="type-signature">(async) </span>addInhibitor<span class="signature">()</span><span class="type-signature"> &rarr; {boolean}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Internal method to addInhibitor
-</div>
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -345,7 +353,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="GCommandsDispatcher.js.html">GCommandsDispatcher.js</a>, <a href="GCommandsDispatcher.js.html#line77">line 77</a>
+        <a href="moreEvents_Classes_ButtonEvent.js.html">moreEvents/Classes/ButtonEvent.js</a>, <a href="moreEvents_Classes_ButtonEvent.js.html#line49">line 49</a>
     </li></ul></dd>
     
 
@@ -370,21 +378,6 @@
 
 
 
-<h5>Returns:</h5>
-
-        
-
-
-<ul>
-    <li>
-        Type: <span class="simple-code">
-<span class="param-type">boolean</span>
-
-</span>
-    </li>
-</ul>
-
-    
 
 
 
@@ -397,7 +390,7 @@
     
 
     
-    <h4 class="name" id="getGuildPrefix"><span class="type-signature">(async) </span>getGuildPrefix<span class="signature">()</span><span class="type-signature"> &rarr; {Stirng}</span></h4>
+    <h4 class="name" id="edit"><span class="type-signature">(async) </span>edit<span class="signature">(content, options)</span><span class="type-signature"></span></h4>
     
 
     
@@ -405,7 +398,7 @@
 
 
 <div class="description">
-    Internal method to getGuildPrefix
+    Method to edit
 </div>
 
 
@@ -414,6 +407,92 @@
 
 
 
+
+
+    <h5>Parameters:</h5>
+    
+
+<div class="table-box">
+    <table class="params">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+            <th>Default</th>
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            <tr>
+                
+                    <td class="name"><code>content</code></td>
+                
+
+                <td class="type">
+                
+                    
+<span class="param-type">String</span>
+
+
+                
+                </td>
+
+                
+
+                
+                    <td class="default">
+                    
+                    </td>
+                
+
+                <td class="description last"></td>
+            </tr>
+
+        
+
+            <tr>
+                
+                    <td class="name"><code>options</code></td>
+                
+
+                <td class="type">
+                
+                    
+<span class="param-type">Object</span>
+
+
+                
+                </td>
+
+                
+
+                
+                    <td class="default">
+                    
+                        null
+                    
+                    </td>
+                
+
+                <td class="description last"></td>
+            </tr>
+
+        
+        </tbody>
+    </table>
+</div>
 
 
 
@@ -450,7 +529,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="GCommandsDispatcher.js.html">GCommandsDispatcher.js</a>, <a href="GCommandsDispatcher.js.html#line53">line 53</a>
+        <a href="moreEvents_Classes_ButtonEvent.js.html">moreEvents/Classes/ButtonEvent.js</a>, <a href="moreEvents_Classes_ButtonEvent.js.html#line84">line 84</a>
     </li></ul></dd>
     
 
@@ -475,21 +554,6 @@
 
 
 
-<h5>Returns:</h5>
-
-        
-
-
-<ul>
-    <li>
-        Type: <span class="simple-code">
-<span class="param-type">Stirng</span>
-
-</span>
-    </li>
-</ul>
-
-    
 
 
 
@@ -502,7 +566,7 @@
     
 
     
-    <h4 class="name" id="removeInhibitor"><span class="type-signature">(async) </span>removeInhibitor<span class="signature">()</span><span class="type-signature"> &rarr; {Set}</span></h4>
+    <h4 class="name" id="think"><span class="type-signature">(async) </span>think<span class="signature">(ephemeral)</span><span class="type-signature"></span></h4>
     
 
     
@@ -510,7 +574,7 @@
 
 
 <div class="description">
-    Internal method to removeInhibitor
+    Method to think
 </div>
 
 
@@ -521,109 +585,55 @@
 
 
 
-
-
-
-
-
-<dl class="details">
-
+    <h5>Parameters:</h5>
     
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="GCommandsDispatcher.js.html">GCommandsDispatcher.js</a>, <a href="GCommandsDispatcher.js.html#line88">line 88</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-
-
-<ul>
-    <li>
-        Type: <span class="simple-code">
-<span class="param-type">Set</span>
-
-</span>
-    </li>
-</ul>
-
-    
-
-
-
-
-
-<hr>
-        
+<div class="table-box">
+    <table class="params">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
             
 
-    
+            <th>Type</th>
 
-    
-    <h4 class="name" id="setGuildPrefix"><span class="type-signature">(async) </span>setGuildPrefix<span class="signature">()</span><span class="type-signature"> &rarr; {boolean}</span></h4>
-    
+            
 
-    
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            <tr>
+                
+                    <td class="name"><code>ephemeral</code></td>
+                
+
+                <td class="type">
+                
+                    
+<span class="param-type">Boolean</span>
 
 
+                
+                </td>
 
-<div class="description">
-    Internal method to setGuildPrefix
+                
+
+                
+
+                <td class="description last"></td>
+            </tr>
+
+        
+        </tbody>
+    </table>
 </div>
-
-
-
-
-
-
-
 
 
 
@@ -660,7 +670,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="GCommandsDispatcher.js.html">GCommandsDispatcher.js</a>, <a href="GCommandsDispatcher.js.html#line19">line 19</a>
+        <a href="moreEvents_Classes_ButtonEvent.js.html">moreEvents/Classes/ButtonEvent.js</a>, <a href="moreEvents_Classes_ButtonEvent.js.html#line66">line 66</a>
     </li></ul></dd>
     
 
@@ -685,21 +695,6 @@
 
 
 
-<h5>Returns:</h5>
-
-        
-
-
-<ul>
-    <li>
-        Type: <span class="simple-code">
-<span class="param-type">boolean</span>
-
-</span>
-    </li>
-</ul>
-
-    
 
 
 
