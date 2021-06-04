@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Class: GEvents</title>
+    <title>Source: base/GCommandsDispatcher.js</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -37,348 +37,146 @@
         <div class="burger-line-3"></div>
     </div>
 
-    <h1 class="page-title">Class: GEvents</h1>
+    <h1 class="page-title">Source: base/GCommandsDispatcher.js</h1>
 
     
 
 
 
-
-<section>
-<header>
-    <hr>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>GEvents<span class="signature">(client, options)</span><span class="type-signature"></span></h2>
-        
-            <div class="class-description">The GEvents class</div>
-        
-    
-</header>
-
-<article>
-    <div class="container-overview">
-    
-        
-
-    
-    <h2>Constructor</h2>
-    
-
-    
-    <h4 class="name" id="GEvents"><span class="type-signature"></span>new GEvents<span class="signature">(client, options)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Creates new GEvents instance
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<div class="table-box">
-    <table class="params">
-        <thead>
-        <tr>
-            
-            <th>Name</th>
-            
-
-            <th>Type</th>
-
-            
-
-            
-
-            <th class="last">Description</th>
-        </tr>
-        </thead>
-
-        <tbody>
-        
-
-            <tr>
-                
-                    <td class="name"><code>client</code></td>
-                
-
-                <td class="type">
-                
-                    
-<span class="param-type">DiscordClient</span>
-
-
-                
-                </td>
-
-                
-
-                
-
-                <td class="description last"></td>
-            </tr>
-
-        
-
-            <tr>
-                
-                    <td class="name"><code>options</code></td>
-                
-
-                <td class="type">
-                
-                    
-<span class="param-type">GEventsOptions</span>
-
-
-                
-                </td>
-
-                
-
-                
-
-                <td class="description last"></td>
-            </tr>
-
-        
-        </tbody>
-    </table>
-</div>
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="base_GEvents.js.html">base/GEvents.js</a>, <a href="base_GEvents.js.html#line9">line 9</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<hr>
-    
-    </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <h3 class="subsection-title">Members</h3>
-
-        
-            
-<h4 class="name" id="eventDir"><span class="type-signature"></span>eventDir<span class="type-signature"> :GEventsOptions</span></h4>
-
-
-
-
-<div class="description">
-    GEventsOptions options
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">GEventsOptions</span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-    <h5 class="subsection-title">Properties:</h5>
-
-    
-
-<div class="table-box">
-    <table class="props">
-        <thead>
-        <tr>
-            
-            <th>Name</th>
-            
-
-            <th>Type</th>
-
-            
-
-            
-
-            <th class="last">Description</th>
-        </tr>
-        </thead>
-
-        <tbody>
-        
-
-            <tr>
-                
-                    <td class="name"><code>eventDir</code></td>
-                
-
-                <td class="type">
-                
-                    
-<span class="param-type">String</span>
-
-
-                
-                </td>
-
-                
-
-                
-
-                <td class="description last"></td>
-            </tr>
-
-        
-        </tbody>
-    </table>
-</div>
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="base_GEvents.js.html">base/GEvents.js</a>, <a href="base_GEvents.js.html#line27">line 27</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-<hr>
-        
-    
-
-    
-
-    
-
-    
-</article>
-
-</section>
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const { Collector } = require('discord.js');
+const ButtonCollectorV12 = require('../structures/v12/ButtonCollector'), ButtonCollectorV13 = require('../structures/v13/ButtonCollector')
+const updater = require("../util/updater")
+
+/**
+ * The GCommansDispatcher class
+ */
+class GCommandsDispatcher {
+    constructor(client) {
+
+        /**
+         * GCommandsDispatcher options
+         * @property {Object} client
+        */
+        this.client = client;
+        this.client.inhibitors = new Set();
+    }
+
+    /**
+     * Internal method to setGuildPrefix
+     * @returns {boolean}
+    */
+    async setGuildPrefix(prefix, guildId) {
+        if(!this.client.database || !this.client.database.working) return this.client.prefix;
+        if(this.client.database.type = "mongodb") {
+            var guildSettings = require('../util/models/guild')
+
+            const settings = await guildSettings.findOne({ id: guildId})
+            if(!settings) {
+              await guildSettings.create({
+                id: guildId,
+                prefix: prefix
+              })
+
+              return true;
+            }
+
+            settings.prefix = prefix
+            await settings.save()
+            return true;
+        } else if(this.client.database.type == "sqlite") {
+            this.client.database.sqlite.set(`guildPrefix_${guildId}`,prefix)
+            return true;
+        } else if(this.client.database.type == "mariadb") {
+            this.client.database.mariadb.set(this.client.database.mariadbOptions, guildId, `guildPrefix`, prefix)
+            return true;
+        } else {
+            console.log(new Color("&amp;d[GCommands] &amp;3Don't have database!").getText())
+            return false;
+        }
+    }
+
+    /**
+     * Internal method to getGuildPrefix
+     * @returns {Stirng}
+    */
+    async getGuildPrefix(guildId) {
+        if(!this.client.database || !this.client.database.working) return this.client.prefix;
+        if(this.client.database.type = "mongodb") {
+            var guildSettings = require('../util/models/guild')
+
+            const settings = await guildSettings.findOne({ id: guildId})
+            if(!settings) {
+              return this.client.prefix
+            }
+
+            return settings.prefix ? settings.prefix : this.client.prefix
+        } else if(this.client.database.type == "sqlite") {
+            var settings = this.client.database.sqlite.get(`guildPrefix_${guildId}`)
+            return settings ? settings : this.client.prefix;
+        } else if(this.client.database.type == "mariadb") {
+            var settings = this.client.database.mariadb.get(this.client.database.mariadbOptions, guildId, `guildPrefix`)
+            return settings ? settings : this.client.prefix;
+        }
+    }
+
+    /**
+     * Internal method to addInhibitor
+     * @param {Function} inhibitor
+     * @returns {boolean}
+    */
+    addInhibitor(inhibitor) {
+		if(typeof inhibitor !== 'function') return console.log('&amp;d[GCommands] &amp;cThe inhibitor must be a function.');
+		if(this.client.inhibitors.has(inhibitor)) return false;
+		this.client.inhibitors.add(inhibitor);
+		return true;
+	}
+
+    /**
+     * Internal method to removeInhibitor
+     * @returns {Set}
+    */
+    removeInhibitor(inhibitor) {
+		if(typeof inhibitor !== 'function') return console.log('&amp;d[GCommands] &amp;cThe inhibitor must be a function.');
+		return this.client.inhibitors.delete(inhibitor);
+	}
+
+    /**
+     * Internal method to createButtonCollector
+     * @param {Function} filter 
+     * @param {Object} options
+     * @returns {Collector}
+    */
+    createButtonCollector(msg, filter, options = {}) {
+        if(updater.checkDjsVersion("13")) return new ButtonCollectorV13(msg, filter, options);
+        else return new ButtonCollectorV12(msg, filter, options);
+    }
+
+    /**
+     * Internal method to createButtonCollector
+     * @param {Function} filter 
+     * @param {Object} options
+     * @returns {Collector}
+    */
+    awaitButtons(msg, filter, options = {}) {
+        return new Promise((resolve, reject) => {
+            const collector = this.createButtonCollector(msg, filter, options);
+            collector.once('end', (buttons, reason) => {
+                if (options.errors &amp;&amp; options.errors.includes(reason)) {
+                    reject(buttons);
+                } else {
+                    resolve(buttons);
+                }
+            });
+        })
+    }
+}
+
+module.exports = GCommandsDispatcher;</code></pre>
+        </article>
+    </section>
 
 
 

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Class: GEvents</title>
+    <title>Source: structures/message.js</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -37,348 +37,180 @@
         <div class="burger-line-3"></div>
     </div>
 
-    <h1 class="page-title">Class: GEvents</h1>
+    <h1 class="page-title">Source: structures/message.js</h1>
 
     
 
 
 
-
-<section>
-<header>
-    <hr>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>GEvents<span class="signature">(client, options)</span><span class="type-signature"></span></h2>
-        
-            <div class="class-description">The GEvents class</div>
-        
-    
-</header>
-
-<article>
-    <div class="container-overview">
-    
-        
-
-    
-    <h2>Constructor</h2>
-    
-
-    
-    <h4 class="name" id="GEvents"><span class="type-signature"></span>new GEvents<span class="signature">(client, options)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Creates new GEvents instance
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<div class="table-box">
-    <table class="params">
-        <thead>
-        <tr>
-            
-            <th>Name</th>
-            
-
-            <th>Type</th>
-
-            
-
-            
-
-            <th class="last">Description</th>
-        </tr>
-        </thead>
-
-        <tbody>
-        
-
-            <tr>
-                
-                    <td class="name"><code>client</code></td>
-                
-
-                <td class="type">
-                
-                    
-<span class="param-type">DiscordClient</span>
-
-
-                
-                </td>
-
-                
-
-                
-
-                <td class="description last"></td>
-            </tr>
-
-        
-
-            <tr>
-                
-                    <td class="name"><code>options</code></td>
-                
-
-                <td class="type">
-                
-                    
-<span class="param-type">GEventsOptions</span>
-
-
-                
-                </td>
-
-                
-
-                
-
-                <td class="description last"></td>
-            </tr>
-
-        
-        </tbody>
-    </table>
-</div>
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="base_GEvents.js.html">base/GEvents.js</a>, <a href="base_GEvents.js.html#line9">line 9</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<hr>
-    
-    </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <h3 class="subsection-title">Members</h3>
-
-        
-            
-<h4 class="name" id="eventDir"><span class="type-signature"></span>eventDir<span class="type-signature"> :GEventsOptions</span></h4>
-
-
-
-
-<div class="description">
-    GEventsOptions options
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">GEventsOptions</span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-    <h5 class="subsection-title">Properties:</h5>
-
-    
-
-<div class="table-box">
-    <table class="props">
-        <thead>
-        <tr>
-            
-            <th>Name</th>
-            
-
-            <th>Type</th>
-
-            
-
-            
-
-            <th class="last">Description</th>
-        </tr>
-        </thead>
-
-        <tbody>
-        
-
-            <tr>
-                
-                    <td class="name"><code>eventDir</code></td>
-                
-
-                <td class="type">
-                
-                    
-<span class="param-type">String</span>
-
-
-                
-                </td>
-
-                
-
-                
-
-                <td class="description last"></td>
-            </tr>
-
-        
-        </tbody>
-    </table>
-</div>
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="base_GEvents.js.html">base/GEvents.js</a>, <a href="base_GEvents.js.html#line27">line 27</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-<hr>
-        
-    
-
-    
-
-    
-
-    
-</article>
-
-</section>
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const { APIMessage, Structures } = require('discord.js');
+
+module.exports = Structures.extend("Message", Message => {
+    /**
+     * The MessageStructure structure
+     * @class
+    */
+    class GCommandsMessage extends Message {
+        constructor(...args) {
+            super(...args)
+        }
+
+        /**
+         * Method to make buttons
+         * @param {String} content
+         * @param {Object} options
+         * @returns {Promise}
+        */
+        async buttons(content, options) {
+            var embed = null;
+            if(typeof content == "object") {
+                embed = content;
+                content = "\u200B"
+            }
+
+            if (!options.components) {
+                options.components = [];
+            }
+
+            if(!options.allowedMentions) {
+                options.allowedMentions = { parse: [] };
+            }
+
+            if(!Array.isArray(options.components)) options.components = [options.components];
+            options.components = options.components;
+
+            if(options.embeds) embed = options.embeds
+
+            return this.client.api.channels[this.channel.id].messages.post({
+                data: {
+                    allowed_mentions: options.allowedMentions,
+                    content: content,
+                    components: options.components,
+                    options,
+                    embed: embed || null
+                }
+            })
+            .then(d => this.client.actions.MessageCreate.handle(d).message);
+        }
+
+        /**
+         * Method to buttonsEdit
+         * @param {String} content
+         * @param {Object} options
+         * @returns {Promise}
+        */
+         async buttonsEdit(msgID, content, options) {
+            var embed = null;
+            if(typeof content == "object") {
+                embed = content;
+                content = "\u200B"
+            }
+
+            if (!options.components) {
+                options.components = [];
+            }
+
+            if(!options.allowedMentions) {
+                options.allowedMentions = { parse: [] };
+            }
+
+            if(!Array.isArray(options.components)) options.components = [options.components];
+            options.components = options.components;
+
+            if(options.embeds) embed = options.embeds
+
+            return this.client.api.channels[this.channel.id].messages[msgID].patch({
+                data: {
+                    allowed_mentions: options.allowedMentions,
+                    content: content,
+                    components: options.components,
+                    options,
+                    embed: embed || null
+                }
+            })
+            .then(d => this.client.actions.MessageCreate.handle(d).message);
+        }
+
+        /**
+         * Method to inlineReply
+         * @param {String} content
+         * @param {Object} options
+         * @returns {Promise}
+        */
+        async inlineReply(content, options) {
+            const mentionRepliedUser = typeof ((options || content || {}).allowedMentions || {}).repliedUser === "undefined" ? true : ((options || content).allowedMentions).repliedUser;
+            delete ((options || content || {}).allowedMentions || {}).repliedUser;
+
+            const apiMessage = content instanceof APIMessage ? content.resolveData() : APIMessage.create(this.channel, content, options).resolveData();
+            Object.assign(apiMessage.data, { message_reference: { message_id: this.id } });
+
+            if (!apiMessage.data.allowed_mentions || Object.keys(apiMessage.data.allowed_mentions).length === 0)
+            apiMessage.data.allowed_mentions = { parse: ["users", "roles", "everyone"] };
+            if (typeof apiMessage.data.allowed_mentions.replied_user === "undefined")
+            Object.assign(apiMessage.data.allowed_mentions, { replied_user: mentionRepliedUser });
+
+            if (Array.isArray(apiMessage.data.content)) {
+                return Promise.all(apiMessage.split().map(x => {
+                    x.data.allowed_mentions = apiMessage.data.allowed_mentions;
+                    return x;
+                }).map(this.inlineReply.bind(this)));
+            }
+
+            const { data, files } = await apiMessage.resolveFiles();
+            return this.client.api.channels[this.channel.id].messages
+                .post({ data, files })
+                .then(d => this.client.actions.MessageCreate.handle(d).message);
+        }
+
+        /**
+         * Method to buttonsWithReply
+         * @param {String} content
+         * @param {Object} options
+         * @returns {Promise}
+        */
+        async buttonsWithReply(content, options) {
+            var embed = null;
+            if(typeof content == "object") {
+                embed = content;
+                content = "\u200B"
+            }
+
+            if (!options.components) {
+                options.components = [];
+            }
+
+            if(!options.allowedMentions) {
+                options.allowedMentions = { parse: [] };
+            }
+
+            if(!Array.isArray(options.components)) options.components = [options.components];
+            options.components = options.components;
+
+            if(options.embeds) embed = options.embeds
+
+            return this.client.api.channels[this.channel.id].messages.post({
+                data: {
+                    allowed_mentions: options.allowedMentions,
+                    content: content,
+                    components: options.components,
+                    message_reference: {
+                        message_id: this.channel.lastMessageID
+                    },
+                    options,
+                    embed: embed || null
+                }
+            })
+            .then(d => this.client.actions.MessageCreate.handle(d).message);
+        }
+    }
+
+    return GCommandsMessage;
+})</code></pre>
+        </article>
+    </section>
 
 
 

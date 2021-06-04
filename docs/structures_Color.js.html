@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Class: GEvents</title>
+    <title>Source: structures/Color.js</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -37,348 +37,100 @@
         <div class="burger-line-3"></div>
     </div>
 
-    <h1 class="page-title">Class: GEvents</h1>
+    <h1 class="page-title">Source: structures/Color.js</h1>
 
     
 
 
 
-
-<section>
-<header>
-    <hr>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>GEvents<span class="signature">(client, options)</span><span class="type-signature"></span></h2>
-        
-            <div class="class-description">The GEvents class</div>
-        
-    
-</header>
-
-<article>
-    <div class="container-overview">
-    
-        
-
-    
-    <h2>Constructor</h2>
-    
-
-    
-    <h4 class="name" id="GEvents"><span class="type-signature"></span>new GEvents<span class="signature">(client, options)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Creates new GEvents instance
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<div class="table-box">
-    <table class="params">
-        <thead>
-        <tr>
-            
-            <th>Name</th>
-            
-
-            <th>Type</th>
-
-            
-
-            
-
-            <th class="last">Description</th>
-        </tr>
-        </thead>
-
-        <tbody>
-        
-
-            <tr>
-                
-                    <td class="name"><code>client</code></td>
-                
-
-                <td class="type">
-                
-                    
-<span class="param-type">DiscordClient</span>
-
-
-                
-                </td>
-
-                
-
-                
-
-                <td class="description last"></td>
-            </tr>
-
-        
-
-            <tr>
-                
-                    <td class="name"><code>options</code></td>
-                
-
-                <td class="type">
-                
-                    
-<span class="param-type">GEventsOptions</span>
-
-
-                
-                </td>
-
-                
-
-                
-
-                <td class="description last"></td>
-            </tr>
-
-        
-        </tbody>
-    </table>
-</div>
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="base_GEvents.js.html">base/GEvents.js</a>, <a href="base_GEvents.js.html#line9">line 9</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<hr>
-    
-    </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <h3 class="subsection-title">Members</h3>
-
-        
-            
-<h4 class="name" id="eventDir"><span class="type-signature"></span>eventDir<span class="type-signature"> :GEventsOptions</span></h4>
-
-
-
-
-<div class="description">
-    GEventsOptions options
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">GEventsOptions</span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-    <h5 class="subsection-title">Properties:</h5>
-
-    
-
-<div class="table-box">
-    <table class="props">
-        <thead>
-        <tr>
-            
-            <th>Name</th>
-            
-
-            <th>Type</th>
-
-            
-
-            
-
-            <th class="last">Description</th>
-        </tr>
-        </thead>
-
-        <tbody>
-        
-
-            <tr>
-                
-                    <td class="name"><code>eventDir</code></td>
-                
-
-                <td class="type">
-                
-                    
-<span class="param-type">String</span>
-
-
-                
-                </td>
-
-                
-
-                
-
-                <td class="description last"></td>
-            </tr>
-
-        
-        </tbody>
-    </table>
-</div>
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="base_GEvents.js.html">base/GEvents.js</a>, <a href="base_GEvents.js.html#line27">line 27</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-<hr>
-        
-    
-
-    
-
-    
-
-    
-</article>
-
-</section>
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * The Color class
+ */
+class Color {
+
+    /**
+     * Creates new Color instance
+     * @param {string} text 
+     * @param {ColorOptions} options 
+     */
+	constructor(text = "", options = {}) {
+
+        /**
+         * Color options
+         * @param {string} text
+         * @param {ColorOptions} json
+         * @type {ColorOptions}
+        */
+		this.text = text;
+
+		this.json = options.json;
+
+		if(typeof this.text == "object") {
+			this.text2 = "";
+			var i;
+			for (i = 0; i &lt; this.text.length; i++) {
+				this.text2 += text[i] + "\n"
+			}
+		}
+
+		if(this.text2) {
+			this.text = this.text2
+		}
+        this.text = this.text
+			// COLORS
+			.replace(/&amp;c/g, "\x1b[31m")
+			.replace(/&amp;a/g, "\x1b[32m")
+			.replace(/&amp;e/g, "\x1b[33m")
+			.replace(/&amp;b/g, "\x1b[34m")
+			.replace(/&amp;d/g, "\x1b[35m")
+			.replace(/&amp;3/g, "\x1b[36m")
+			.replace(/&amp;f/g, "\x1b[37m")
+
+			// OTHER
+			.replace(/&amp;r/g, "\x1b[0m")
+			.replace(/&amp;n/g, "\x1b[4m")
+			.replace(/&amp;p/g, "\x1b[7m")
+	}
+
+
+    /**
+     * Internal method to getText
+     * @returns {json}
+	 * @returns {string}
+     */
+	getText() {
+		if(this.json) {
+			return {text:this.text + "\x1b[0m"}
+		}
+		return this.text + "\x1b[0m";
+	}
+
+    /**
+     * Internal method to getRGB
+     * @returns {json}
+	 * @returns {string}
+     */
+	getRGB() {
+		var get = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(this.text);
+
+		if(this.json) {
+			return {
+				r: parseInt(get[1], 16),
+				g: parseInt(get[2], 16),
+				b: parseInt(get[3], 16)
+			};
+		}
+
+		return `r: ${parseInt(get[1], 16)}, g: ${parseInt(get[2], 16)}, b: ${parseInt(get[3], 16)}`
+	}
+};
+
+module.exports = Color;</code></pre>
+        </article>
+    </section>
 
 
 

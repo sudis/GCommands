@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Class: GEvents</title>
+    <title>Class: GEventLoader</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -37,7 +37,7 @@
         <div class="burger-line-3"></div>
     </div>
 
-    <h1 class="page-title">Class: GEvents</h1>
+    <h1 class="page-title">Class: GEventLoader</h1>
 
     
 
@@ -48,9 +48,9 @@
 <header>
     <hr>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>GEvents<span class="signature">(client, options)</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>GEventLoader<span class="signature">(GCommandsClient)</span><span class="type-signature"></span></h2>
         
-            <div class="class-description">The GEvents class</div>
+            <div class="class-description">The GCommandsEventLoader class</div>
         
     
 </header>
@@ -65,7 +65,7 @@
     
 
     
-    <h4 class="name" id="GEvents"><span class="type-signature"></span>new GEvents<span class="signature">(client, options)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="GEventLoader"><span class="type-signature"></span>new GEventLoader<span class="signature">(GCommandsClient)</span><span class="type-signature"></span></h4>
     
 
     
@@ -73,7 +73,7 @@
 
 
 <div class="description">
-    Creates new GEvents instance
+    Creates new GCommandsEventLoader instance
 </div>
 
 
@@ -110,36 +110,13 @@
 
             <tr>
                 
-                    <td class="name"><code>client</code></td>
+                    <td class="name"><code>GCommandsClient</code></td>
                 
 
                 <td class="type">
                 
                     
-<span class="param-type">DiscordClient</span>
-
-
-                
-                </td>
-
-                
-
-                
-
-                <td class="description last"></td>
-            </tr>
-
-        
-
-            <tr>
-                
-                    <td class="name"><code>options</code></td>
-                
-
-                <td class="type">
-                
-                    
-<span class="param-type">GEventsOptions</span>
+<span class="param-type">GCommandsClient</span>
 
 
                 
@@ -192,7 +169,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="base_GEvents.js.html">base/GEvents.js</a>, <a href="base_GEvents.js.html#line9">line 9</a>
+        <a href="managers_GEventLoader.js.html">managers/GEventLoader.js</a>, <a href="managers_GEventLoader.js.html#line8">line 8</a>
     </li></ul></dd>
     
 
@@ -243,26 +220,16 @@
 
         
             
-<h4 class="name" id="eventDir"><span class="type-signature"></span>eventDir<span class="type-signature"> :GEventsOptions</span></h4>
+<h4 class="name" id="GCommandsClient"><span class="type-signature"></span>GCommandsClient<span class="type-signature"></span></h4>
 
 
 
 
 <div class="description">
-    GEventsOptions options
+    GCommandsEventLoader options
 </div>
 
 
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">GEventsOptions</span>
-
-
-        </li>
-    </ul>
 
 
 
@@ -295,13 +262,13 @@
 
             <tr>
                 
-                    <td class="name"><code>eventDir</code></td>
+                    <td class="name"><code>GCommandsClient</code></td>
                 
 
                 <td class="type">
                 
                     
-<span class="param-type">String</span>
+<span class="param-type">Object</span>
 
 
                 
@@ -351,7 +318,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="base_GEvents.js.html">base/GEvents.js</a>, <a href="base_GEvents.js.html#line27">line 27</a>
+        <a href="managers_GEventLoader.js.html">managers/GEventLoader.js</a>, <a href="managers_GEventLoader.js.html#line19">line 19</a>
     </li></ul></dd>
     
 
@@ -371,6 +338,325 @@
         
     
 
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="createAPIMessage"><span class="type-signature">(async) </span>createAPIMessage<span class="signature">()</span><span class="type-signature"> &rarr; {object}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Internal method to createAPIMessage
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="managers_GEventLoader.js.html">managers/GEventLoader.js</a>, <a href="managers_GEventLoader.js.html#line648">line 648</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<ul>
+    <li>
+        Type: <span class="simple-code">
+<span class="param-type">object</span>
+
+</span>
+    </li>
+</ul>
+
+    
+
+
+
+
+
+<hr>
+        
+            
+
+    
+
+    
+    <h4 class="name" id="getSlashArgs"><span class="type-signature">(async) </span>getSlashArgs<span class="signature">()</span><span class="type-signature"> &rarr; {object}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Internal method to getSlashArgs
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="managers_GEventLoader.js.html">managers/GEventLoader.js</a>, <a href="managers_GEventLoader.js.html#line660">line 660</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<ul>
+    <li>
+        Type: <span class="simple-code">
+<span class="param-type">object</span>
+
+</span>
+    </li>
+</ul>
+
+    
+
+
+
+
+
+<hr>
+        
+            
+
+    
+
+    
+    <h4 class="name" id="inhibit"><span class="type-signature">(async) </span>inhibit<span class="signature">()</span><span class="type-signature"> &rarr; {object}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Internal method to inhivit
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="managers_GEventLoader.js.html">managers/GEventLoader.js</a>, <a href="managers_GEventLoader.js.html#line702">line 702</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<ul>
+    <li>
+        Type: <span class="simple-code">
+<span class="param-type">object</span>
+
+</span>
+    </li>
+</ul>
+
+    
+
+
+
+
+
+<hr>
+        
     
 
     

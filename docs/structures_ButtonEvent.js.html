@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Source: structures/ButtonEvent.js</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <script src="scripts/nav.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.3/fuse.min.js"></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link type="text/css" rel="stylesheet" href="styles/skyceil.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="utilities">
+        <div id="search">
+            <input type="text" id="search-box" placeholder="Search"><br>
+            <div id="search-results" style="display: none;"></div>
+        </div>
+        <button class="theme" data-theme="light"><i class="fas fa-moon"></i></button>
+    </div>
+    <hr>
+    <h4><a href="index.html">Home</a></h4><h5 class="no-bottom must-underline">Classes</h5><ul><li><span class="small-icon C">C</span><b><a href="ButtonEvent.html">ButtonEvent</a></b><ul class="has-class-methods"><li><span class="small-icon F">F</span><a href="ButtonEvent.html#defer">defer</a></li><li><span class="small-icon F">F</span><a href="ButtonEvent.html#edit">edit</a></li><li><span class="small-icon F">F</span><a href="ButtonEvent.html#think">think</a></li></ul></li><li><span class="small-icon C">C</span><b><a href="Color.html">Color</a></b><ul class="has-class-methods"><li><span class="small-icon F">F</span><a href="Color.html#getRGB">getRGB</a></li><li><span class="small-icon F">F</span><a href="Color.html#getText">getText</a></li><li><span class="small-icon M">M</span><a href="Color.html#text">text</a></li></ul></li><li><span class="small-icon C">C</span><b><a href="GCommands.html">GCommands</a></b><ul class="has-class-methods"><li><span class="small-icon M">M</span><a href="GCommands.html#cmdDir">cmdDir</a></li><li><span class="small-icon M">M</span><a href="GCommands.html#cooldownDefault">cooldownDefault</a></li><li><span class="small-icon M">M</span><a href="GCommands.html#database">database</a></li><li><span class="small-icon M">M</span><a href="GCommands.html#eventDir">eventDir</a></li><li><span class="small-icon M">M</span><a href="GCommands.html#prefix">prefix</a></li><li><span class="small-icon M">M</span><a href="GCommands.html#slash">slash</a></li><li><span class="small-icon M">M</span><a href="GCommands.html#unkownCommandMessage">unkownCommandMessage</a></li></ul></li><li><span class="small-icon C">C</span><a href="GCommandsBase.html">GCommandsBase</a></li><li><span class="small-icon C">C</span><b><a href="GCommandsDispatcher.html">GCommandsDispatcher</a></b><ul class="has-class-methods"><li><span class="small-icon F">F</span><a href="GCommandsDispatcher.html#addInhibitor">addInhibitor</a></li><li><span class="small-icon F">F</span><a href="GCommandsDispatcher.html#awaitButtons">awaitButtons</a></li><li><span class="small-icon F">F</span><a href="GCommandsDispatcher.html#createButtonCollector">createButtonCollector</a></li><li><span class="small-icon F">F</span><a href="GCommandsDispatcher.html#getGuildPrefix">getGuildPrefix</a></li><li><span class="small-icon F">F</span><a href="GCommandsDispatcher.html#removeInhibitor">removeInhibitor</a></li><li><span class="small-icon F">F</span><a href="GCommandsDispatcher.html#setGuildPrefix">setGuildPrefix</a></li><li><span class="small-icon M">M</span><a href="GCommandsDispatcher.html#client">client</a></li></ul></li><li><span class="small-icon C">C</span><b><a href="GCommandsGuild.html">GCommandsGuild</a></b><ul class="has-class-methods"><li><span class="small-icon F">F</span><a href="GCommandsGuild.html#getCommandPrefix">getCommandPrefix</a></li><li><span class="small-icon F">F</span><a href="GCommandsGuild.html#setCommandPrefix">setCommandPrefix</a></li></ul></li><li><span class="small-icon C">C</span><b><a href="GCommandsMessage.html">GCommandsMessage</a></b><ul class="has-class-methods"><li><span class="small-icon F">F</span><a href="GCommandsMessage.html#buttons">buttons</a></li><li><span class="small-icon F">F</span><a href="GCommandsMessage.html#buttonsEdit">buttonsEdit</a></li><li><span class="small-icon F">F</span><a href="GCommandsMessage.html#buttonsWithReply">buttonsWithReply</a></li><li><span class="small-icon F">F</span><a href="GCommandsMessage.html#inlineReply">inlineReply</a></li></ul></li><li><span class="small-icon C">C</span><b><a href="GEventLoader.html">GEventLoader</a></b><ul class="has-class-methods"><li><span class="small-icon F">F</span><a href="GEventLoader.html#createAPIMessage">createAPIMessage</a></li><li><span class="small-icon F">F</span><a href="GEventLoader.html#getSlashArgs">getSlashArgs</a></li><li><span class="small-icon F">F</span><a href="GEventLoader.html#inhibit">inhibit</a></li><li><span class="small-icon M">M</span><a href="GEventLoader.html#GCommandsClient">GCommandsClient</a></li></ul></li><li><span class="small-icon C">C</span><b><a href="GEvents.html">GEvents</a></b><ul class="has-class-methods"><li><span class="small-icon M">M</span><a href="GEvents.html#eventDir">eventDir</a></li></ul></li><li><span class="small-icon C">C</span><b><a href="MessageActionRow.html">MessageActionRow</a></b><ul class="has-class-methods"><li><span class="small-icon F">F</span><a href="MessageActionRow.html#addComponent">addComponent</a></li><li><span class="small-icon F">F</span><a href="MessageActionRow.html#toJSON">toJSON</a></li></ul></li><li><span class="small-icon C">C</span><b><a href="MessageButton.html">MessageButton</a></b><ul class="has-class-methods"><li><span class="small-icon F">F</span><a href="MessageButton.html#setDisabled">setDisabled</a></li><li><span class="small-icon F">F</span><a href="MessageButton.html#setEmoji">setEmoji</a></li><li><span class="small-icon F">F</span><a href="MessageButton.html#setID">setID</a></li><li><span class="small-icon F">F</span><a href="MessageButton.html#setLabel">setLabel</a></li><li><span class="small-icon F">F</span><a href="MessageButton.html#setStyle">setStyle</a></li><li><span class="small-icon F">F</span><a href="MessageButton.html#setURL">setURL</a></li><li><span class="small-icon F">F</span><a href="MessageButton.html#toJSON">toJSON</a></li></ul></li></ul><h5 class="no-bottom must-underline">Events</h5><ul><li><span class="small-icon E">E</span><a href="GCommands.html#event:debug">debug</a></li></ul><h4>Global</h4><ul><li><a href="global.html#ReturnSystem">ReturnSystem</a></li></ul>
+</nav>
+
+<div id="main">
+    <div class="burger">
+        <div class="burger-line-1"></div>
+        <div class="burger-line-2"></div>
+        <div class="burger-line-3"></div>
+    </div>
+
+    <h1 class="page-title">Source: structures/ButtonEvent.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/* From discord-buttons edited */
+const { default: axios } = require("axios");
+const {APIMessage, Client, MessageEmbed} = require("discord.js")
+const Color = require("../index")
+
+/**
+ * The ButtonEvent class
+ */
+class ButtonEvent {
+
+    /**
+     * Creates new ButtonEvent instance
+     * @param {Client} client
+     * @param {Object} data 
+    */
+    constructor(client, data) {
+        this.client = client;
+
+        this.id = data.data.custom_id;
+
+        this.version = data.version;
+
+        this.token = data.token;
+
+        this.discordID = data.id;
+
+        this.applicationID = data.application_id;
+
+        this.guild = data.guild_id ? client.guilds.cache.get(data.guild_id) : undefined;
+
+        this.channel = client.channels.cache.get(data.channel_id);
+
+        this.clicker = {};
+
+        if (this.guild) {
+            this.clicker.member = this.guild.members.cache.get(data.member.user.id);
+            this.clicker.user = this.client.users.cache.get(data.member.user.id);
+        } else {
+            this.clicker.user = this.client.users.cache.get(data.user.id);
+        }
+
+        this.message = data.message;
+
+        this.replied = false;
+        this.deferred = false;
+    }
+
+    /**
+     * Method to defer
+     * @param {Boolean} ephemeral 
+    */
+     async defer(ephemeral) {
+        if (this.deferred || this.replied) return console.log(new Color('&amp;d[GCommands] &amp;cThis button already has a reply').getText());
+        await this.client.api.interactions(this.discordID, this.token).callback.post({
+            data: {
+                type: 6,
+                data: {
+                    flags: ephemeral ? 1 &lt;&lt; 6 : null,
+                },
+            },
+        });
+        this.deferred = true;
+    }
+
+    /**
+     * Method to think
+     * @param {Boolean} ephemeral 
+    */
+    async think(ephemeral) {
+        if (this.deferred || this.replied) return console.log(new Color('&amp;d[GCommands] &amp;cThis button already has a reply').getText());
+        await this.client.api.interactions(this.discordID, this.token).callback.post({
+            data: {
+                type: 5,
+                data: {
+                    flags: ephemeral ? 1 &lt;&lt; 6 : null,
+                },
+            },
+        });
+        this.deferred = true;
+    }
+
+    /**
+     * Method to edit
+     * @param {Object} options 
+    */
+    async edit(result) {
+        if (typeof result == "object") {
+            var finalData = [];
+            result.embeds = [];
+            if(!Array.isArray(result.embeds)) result.embeds = [result.embeds]
+
+            if(!Array.isArray(result.components)) result.components = [result.components];
+            result.components = result.components;
+
+            if(typeof result.content == "object") {
+                result.embeds = [result.content]
+                result.content = "\u200B"
+            }
+
+            if(result.edited == false) {
+                return this.client.api.interactions(this.discordID, this.token).callback.post({
+                    data: {
+                        type: 7,
+                        data: {
+                            content: result.content,
+                            components: result.components,
+                            embeds: result.embeds
+                        },
+                    },
+                });
+            }
+
+            await this.client.api.interactions(this.discordID, this.token).callback.post({
+                data: {
+                    type: 6,
+                },
+            });
+
+            return this.client.api.webhooks(this.client.user.id, this.token).messages["@original"].patch({ data: {
+                content: result.content,
+                components: result.components || [],
+                embeds: result.embeds || []
+            }})
+        } else {
+            await this.client.api.interactions(this.discordID, this.token).callback.post({
+                data: {
+                    type: 6,
+                },
+            });
+
+            return this.client.api.webhooks(this.client.user.id, this.token).messages["@original"].patch({ data: {
+                content: result,
+            }})
+        }
+    }
+
+    get reply() {
+        /**
+         * Method to replySend
+         * @param {Object} options 
+        */
+        let _send = async(result) => {
+            var data = {
+                content: result
+            }
+
+            if (typeof result === 'object') {
+                if(typeof result == "object" &amp;&amp; !result.content) {
+                    const embed = new MessageEmbed(result)
+                    data = await this.createAPIMessage(this.channel, embed)
+                }
+                else if(typeof result.content == "object" ) {
+                    const embed = new MessageEmbed(result.content)
+                    data = await this.createAPIMessage(this.channel, embed)
+                } else data = { content: result.content }
+            }
+
+            if(typeof result == "object" &amp;&amp; result.allowedMentions) { data.allowedMentions = result.allowedMentions } else data.allowedMentions = { parse: [], repliedUser: true }
+            if(typeof result == "object" &amp;&amp; result.ephemeral) { data.flags = 64 }
+            if(typeof result == "object" &amp;&amp; result.components) {
+                if(!Array.isArray(result.components)) result.components = [result.components];
+                result.components = result.components;
+            }
+            if(typeof result == "object" &amp;&amp; result.embeds) {
+                if(!Array.isArray(result.embeds)) result.embeds = [result.embeds];
+                result.embeds = result.embeds;
+            }
+
+            let apiMessage = (await this.client.api.interactions(this.discordID, this.token).callback.post({
+                data: {
+                    type: result.thinking ? 5 : 4,
+                    data
+                }, 
+            })).toJSON();
+
+            let apiMessageMsg = (await axios.get(`https://discord.com/api/v8/webhooks/${this.client.user.id}/${this.token}/messages/@original`)).data;
+            apiMessage = apiMessageMsg;
+
+            this.replied = true;
+            return apiMessage;
+        }
+
+        /**
+         * Method to replyEdit
+         * @param {Object} options 
+        */
+         let _edit = async(result) => {
+            if (typeof result == "object") {
+                var finalData = [];
+
+                if(!Array.isArray(result.components)) result.components = [result.components];
+                result.components = result.components;
+
+                if(typeof result.content == "object") {
+                    result.embeds = [result.content]
+                    result.content = "\u200B"
+                }
+                if(typeof result == "object" &amp;&amp; result.embeds) {
+                    if(!Array.isArray(result.embeds)) result.embeds = [result.embeds];
+                    result.embeds = result.embeds;
+                }
+
+                let apiMessage = (await this.client.api.webhooks(this.client.user.id, this.token).messages["@original"].patch({ data: {
+                    content: result.content,
+                    components: result.components,
+                    embeds: result.embeds
+                }}))
+                
+                return apiMessage;
+            }
+
+            return this.client.api.webhooks(this.client.user.id, this.token).messages["@original"].patch({ data: { content: result }})
+        }
+
+        return {
+            send: _send,
+            edit: _edit
+        }
+    }
+
+    async createAPIMessage(channel, content) {
+        const apiMessage = await APIMessage.create(this.channel, content)
+        .resolveData()
+        .resolveFiles();
+        
+        return { ...apiMessage.data, files: apiMessage.files };
+    }
+}
+
+module.exports = ButtonEvent;</code></pre>
+        </article>
+    </section>
+
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Fri Jun 04 2021 17:16:13 GMT+0200 (stredoeurópsky letný čas) using <a href="https://github.com/devsnowflake/jsdoc-skyceil">Skyceil Theme</a>
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+
+</body>
+</html>

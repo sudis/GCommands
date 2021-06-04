@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Class: GEvents</title>
+    <title>Source: base/GCommands.js</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -37,348 +37,148 @@
         <div class="burger-line-3"></div>
     </div>
 
-    <h1 class="page-title">Class: GEvents</h1>
+    <h1 class="page-title">Source: base/GCommands.js</h1>
 
     
 
 
 
-
-<section>
-<header>
-    <hr>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>GEvents<span class="signature">(client, options)</span><span class="type-signature"></span></h2>
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const GCommandLoader = require("../managers/GCommandLoader"), Color = require("../structures/Color"), GCommandsBase = require("./GCommandsBase"), GCommandsDispatcher = require("./GCommandsDispatcher"), GEvents = require("./GEvents"), GEventLoader = require("../managers/GEventLoader"), GDatabaseLoader = require("../managers/GDatabaseLoader"), Events = require("../util/Constants"), GUpdater = require("../util/updater");
+
+const { Collection, version, Client } = require('discord.js');
+const axios = require("axios");
+const fs = require("fs");
+
+/**
+ * The main GCommands class
+ */
+class GCommands extends GCommandsBase {
+    /**
+     * The GCommands class
+     * @param {Object} client - Discord.js Client
+     * @param {Object} options - Options (cmdDir, eventDir etc)
+     */
+    constructor(client, options = {}) {
+        super(client, options)
+
+        if (typeof client != "object") return console.log(new Color("&amp;d[GCommands] &amp;cNo discord.js client provided!",{json:false}).getText());
+        if (!Object.keys(options).length) return console.log(new Color("&amp;d[GCommands] &amp;cNo default options provided!",{json:false}).getText());
+        if(!options.cmdDir) return console.log(new Color("&amp;d[GCommands] &amp;cNo default options provided! (cmdDir)",{json:false}).getText());
+        if(!options.language) return console.log(new Color("&amp;d[GCommands] &amp;cNo default options provided! (language (english, spanish, portuguese, russian, german, czech, slovak, turkish))",{json:false}).getText());
+
+        this.GCommandsClient = this;
+        this.client = client;
+
+        /**
+         * CmdDir
+         * @property {String} cmdDir
+        */
+        this.cmdDir = options.cmdDir;
+
+        /**
+         * EventDir
+         * @property {String} eventDir
+         */
+        this.eventDir = options.eventDir;
+        this.client.discordjsversion = version
+
+        /**
+         * unkownCommandMessage
+         * @property {String} unkownCommandMessage
+         */
+        this.unkownCommandMessage = options.unkownCommandMessage;
+
+        /**
+         * ownLanguageFile
+         * @property {Object} ownLanguageFile
+         */
+        if(!options.ownLanguageFile) this.languageFile = require("../util/message.json");
+        else this.languageFile = options.ownLanguageFile;
+        this.language = options.language;
+
+        if(this.eventDir) {
+            new GEvents(this.GCommandsClient, {
+                eventDir: this.eventDir
+            })
+        }
+
+        /**
+         * database
+         * @property {Object} database
+         */
+         this.database = {
+            type:  undefined,
+            url: undefined,
+            host: undefined,
+            username: undefined,
+            password: undefined,
+            databaseName: undefined,
+            port: undefined,
+            working: false
+        };
         
-            <div class="class-description">The GEvents class</div>
+        if(options.database) {
+            this.database = {
+                type: options.database.type ? options.database.type : undefined,
+                url: options.database.url ? options.database.url : undefined,
+                host: options.database.host ? options.database.host : undefined,
+                username: options.database.username ? options.database.username : undefined,
+                password: options.database.password ? options.database.password : undefined,
+                databaseName: options.database.databaseName ? options.database.databaseName : undefined,
+                port: options.database.port ? options.database.port : undefined,
+                working: false
+            };
+        }
+
+        this.client.categories = fs.readdirSync("./" + this.cmdDir );
+        this.client.commands = new Collection();
+        this.client.aliases = new Collection();
+
+        /**
+         * Prefix
+         * @property {String} prefix
+         */
+        this.prefix = options.slash.prefix ? options.slash.prefix : undefined;
+
+        /**
+         * Slash
+         * @property {String} slash
+         */
+        this.slash = options.slash.slash ? options.slash.slash : false;
+
+        /**
+         * cooldownDefault
+         * @property {Number} cooldownDefault
+         */
+        this.cooldownDefault = options.defaultCooldown ? options.defaultCooldown : 0;
+
+        this.GCommandsClient.unkownCommandMessage = this.unkownCommandMessage;
+        this.client.language = this.language;
+        this.client.languageFile = this.languageFile;
+        this.client.database = this.database
+        this.client.prefix = this.prefix;
+        this.client.slash = this.slash;
+        this.client.cooldownDefault = this.cooldownDefault;
+
+
+        process.setMaxListeners(50);
+        process.on('uncaughtException', (error) => { console.log(new Color("&amp;d[GCommands Errors] &amp;eHandled: &amp;a" + error + ` ${error.response ? error.response.data.message : ""} ${error.response ? error.response.data.code : ""}`).getText());});
         
-    
-</header>
-
-<article>
-    <div class="container-overview">
-    
-        
-
-    
-    <h2>Constructor</h2>
-    
-
-    
-    <h4 class="name" id="GEvents"><span class="type-signature"></span>new GEvents<span class="signature">(client, options)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Creates new GEvents instance
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<div class="table-box">
-    <table class="params">
-        <thead>
-        <tr>
-            
-            <th>Name</th>
-            
-
-            <th>Type</th>
-
-            
-
-            
-
-            <th class="last">Description</th>
-        </tr>
-        </thead>
-
-        <tbody>
-        
-
-            <tr>
-                
-                    <td class="name"><code>client</code></td>
-                
-
-                <td class="type">
-                
-                    
-<span class="param-type">DiscordClient</span>
-
-
-                
-                </td>
-
-                
-
-                
-
-                <td class="description last"></td>
-            </tr>
-
-        
-
-            <tr>
-                
-                    <td class="name"><code>options</code></td>
-                
-
-                <td class="type">
-                
-                    
-<span class="param-type">GEventsOptions</span>
-
-
-                
-                </td>
-
-                
-
-                
-
-                <td class="description last"></td>
-            </tr>
-
-        
-        </tbody>
-    </table>
-</div>
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="base_GEvents.js.html">base/GEvents.js</a>, <a href="base_GEvents.js.html#line9">line 9</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<hr>
-    
-    </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <h3 class="subsection-title">Members</h3>
-
-        
-            
-<h4 class="name" id="eventDir"><span class="type-signature"></span>eventDir<span class="type-signature"> :GEventsOptions</span></h4>
-
-
-
-
-<div class="description">
-    GEventsOptions options
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">GEventsOptions</span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-    <h5 class="subsection-title">Properties:</h5>
-
-    
-
-<div class="table-box">
-    <table class="props">
-        <thead>
-        <tr>
-            
-            <th>Name</th>
-            
-
-            <th>Type</th>
-
-            
-
-            
-
-            <th class="last">Description</th>
-        </tr>
-        </thead>
-
-        <tbody>
-        
-
-            <tr>
-                
-                    <td class="name"><code>eventDir</code></td>
-                
-
-                <td class="type">
-                
-                    
-<span class="param-type">String</span>
-
-
-                
-                </td>
-
-                
-
-                
-
-                <td class="description last"></td>
-            </tr>
-
-        
-        </tbody>
-    </table>
-</div>
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="base_GEvents.js.html">base/GEvents.js</a>, <a href="base_GEvents.js.html#line27">line 27</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-<hr>
-        
-    
-
-    
-
-    
-
-    
-</article>
-
-</section>
+        new GDatabaseLoader(this.GCommandsClient);
+        new GEventLoader(this.GCommandsClient);
+        new GCommandLoader(this.GCommandsClient);
+        this.client.dispatcher = new GCommandsDispatcher(this.client);
+
+        GUpdater.__updater();
+    }
+}
+
+module.exports = GCommands;</code></pre>
+        </article>
+    </section>
 
 
 
